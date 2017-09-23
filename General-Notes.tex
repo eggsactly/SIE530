@@ -3,14 +3,10 @@
 \usepackage{tree-dvips}
 \usepackage{amsmath}
 \usepackage{accents}
+\usepackage[hidelinks]{hyperref}
+
 \newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-}
+
 \begin{document}
 
 \title{SIE 530 Comprehensive Notes}
@@ -21,9 +17,9 @@
 
 \begin{itemize}
 
-\item Population: A finite well defined group which can be enumerated in theory.
+\item Population: A finite well defined group which can be enumerated in theory. \cite[p.9]{classnotes.1}
 
-\item Sample: A subset of a population obtained through a process (possibly random selection). 
+\item Sample: A subset of a population obtained through a process (possibly random selection). \cite[p.9]{classnotes.1}
 
 \end{itemize}
 
@@ -33,5 +29,9 @@
 
 Central Tendency: sample average/mean
 $$\bar{x}=\frac{\sum_{i=1}^n x_i}{n}$$
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{course-references}
 
 \end{document}
