@@ -7,6 +7,8 @@
 
 \newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
 
+\setlength\parindent{0pt}
+
 \begin{document}
 
 \title{SIE 530 Comprehensive Notes}
@@ -17,7 +19,9 @@
 
 \begin{itemize}
 
-\item Population: A finite well defined group which can be enumerated in theory. \cite[p.9]{classnotes.1}
+\item Median: A value such that at least 50\% of the data values are at of below this value and at least 50\% of the data values are at or above this value. (Not sensitive to the outlier). \cite[p.9]{classnotes.1}
+
+\item Population: A finite well defined group, which can be enumerated in theory. \cite[p.9]{classnotes.1}
 
 \item Sample: A subset of a population obtained through a process (possibly random selection). \cite[p.9]{classnotes.1}
 
@@ -27,8 +31,12 @@
 
 \section*{Basic Statistics}
 
-Central Tendency: sample average/mean
+Central Tendency: sample average/mean \cite[p.14]{classnotes.1}.
 $$\bar{x}=\frac{\sum_{i=1}^n x_i}{n}$$
+
+Scatter/dispersion: \emph{sample variance} or \emph{sample standard deviation} \cite[p.14]{classnotes.1}.
+
+$$ \hat{\sigma}=S=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}} $$
 
 \newpage
 \bibliographystyle{unsrt}
