@@ -65,7 +65,7 @@ $$\hat{\sigma}=S=\sqrt{\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}$$
 
 \end{itemize}
 
-\subsection*{Properties \cite[p.19]{classnotes.1}}
+\subsection*{Properties of Sets \cite[p.19]{classnotes.1}}
 
 \begin{itemize}
 
@@ -80,6 +80,56 @@ $(A \cup B)^c=A^c \cap B^c$
 $(A \cap B)^c=A^c\cup B^c$
 
 \end{itemize}
+
+\subsection*{Definition of Probability \cite[p.4]{classnotes.2}}
+[P \(\) : \{set of all possible events\} $\rightarrow [0,1]$]
+\begin{itemize}
+
+\item Axiom 1: For any event $A, P(A)\geq 0$ (nonnegatove).
+\item Axiom 2: $P(S)=1$
+\item Axiom 3: Fot any sequence of disjoint sets $A_1,A_2,\dots,A_n, P(A_1 \cup A_2 \cup \dots A_n)=\sum\limits_{i=1}^nP(A_i)$, where n is the total number of disjoint sets in the sequence.
+
+\end {itemize}
+
+\subsection*{Properties and Additive Laws \cite[p.5]{classnotes.2}}
+\begin{itemize}
+\item $P(A)=1-P(A^c);$
+\item $P(\emptyset)=0$
+\item $P(S)=1$
+\item if $A$ and $B$ are disjoint $P(A\cup B)=0$
+\item $A\subset B \rightarrow P(A)\leq (B)$
+\item $P(A \sup B) = P(A) + P(B) - P(A \cap B)$
+\end{itemize}
+
+Bonferroni's inequality \cite[p.6]{classnotes.2}
+$$P(A\cap B) \geq P(A) + P(B) - 1$$
+
+Boole's inequality \cite[p.5]{classnotes.2}: for any sets $A_1, A_2, \dots \subset S$
+$$P(\bigcup\limits_{i=1}^\infty\leq \sum\limits_{i=1}^\infty P(A_i)$$
+
+\subsection*{Counting Techniquies}
+
+\begin{itemize}
+\item Permutations: Select k objects from a total n without replacement and order matters, what is the number of permutations? \cite[p.9]{classnotes.2}:
+$$P_{k,n} = \frac{n!}{(n-k)!}$$
+\item Combinations: Select k objects from a total of n without replacement and order does not matter, what is the number of combinations? \cite[p.10]{classnotes.2}
+$$C_{k,n}=
+\begin{pmatrix}
+n \\
+k
+\end{pmatrix}
+=\frac{n!}{k!(n-k)!}
+$$
+\end{itemize}
+
+\subsection*{Conditional Probability}
+Probability of $A$ such that $B$ has occured \cite[p.12]{classnotes.2}:
+$$P(A|B)=\frac{P(A \cap B)}{P(B)}$$ 
+$$P(A|B)P(B)=P(B|A)P(A)$$
+$$P(A_1|B)+P(A_@|B)+\dots P(A_k|B)=1$$
+Law of total probability:
+$$\sum\limits_{i=1}^k P(B|A_i)P(A_i)=P(B)$$
+
 
 \newpage
 \bibliographystyle{unsrt}
