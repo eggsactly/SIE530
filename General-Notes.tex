@@ -25,11 +25,19 @@
 
 \item Exhaustive: Event $A$ and event $B$ are exhaustive if the union is $S$. If $A \cap B = \emptyset \leftrightarrow$ $A$ and $B$ are exhaustive events. \cite[p.18]{classnotes.1}
 
+\item Independent: Two events $A$ and $B$ are said to be independent if $P(A|B)=P(A)$ \cite[p.8]{classnotes.3}
+
 \item Median: A value such that at least 50\% of the data values are at of below this value and at least 50\% of the data values are at or above this value. (Not sensitive to the outlier). \cite[p.9]{classnotes.1}
+
+\item Nondecreasing: A function f(x) is said to be \emph{nondecreasing} on an interval $I$ if $f(b)\geq f(a)$ for all $b>a$, where $a,b \in I$. \cite{wolfram.nondecreasing}
 
 \item Population: A finite well defined group, which can be enumerated in theory. \cite[p.9]{classnotes.1}
 
 \item Random Experiment: an action or process whos outcome is uncertain \cite[p.16]{classnotes.1}
+
+\item Random Variable: A variable with unknown numerical value that can take on or represent any possible element from a \emph{sample space} \cite[p.10]{classnotes.3}
+
+\item Right Continuous: A function is \emph{Right Continuous} when a point as approached from the right \cite[p.13]{classnotes.3}
 
 \item Sample: A subset of a population obtained through a process (possibly random selection). \cite[p.9]{classnotes.1}
 
@@ -39,7 +47,7 @@
 
 \newpage
 
-\section*{Basic Statistics}
+\section*{Probability Theory}
 
 Central Tendency: sample average/mean \cite[p.14]{classnotes.1}.
 $$\bar{x}=\frac{\sum\limits_{i=1}^{n} x_i}{n}$$
@@ -48,7 +56,7 @@ Scatter/dispersion: \emph{sample variance} or \emph{sample standard deviation} \
 
 $$\hat{\sigma}=S=\sqrt{\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}$$
 
-\subsection*{Set Notation}
+\subsection*{Set Theory}
 \begin{itemize}
 
 \item $s\in S$: The outcome $s$ belongs to the sampel space $S$ \cite[p.17]{classnotes.1}
@@ -87,7 +95,7 @@ $(A \cap B)^c=A^c\cup B^c$
 
 \item Axiom 1: For any event $A, P(A)\geq 0$ (nonnegatove).
 \item Axiom 2: $P(S)=1$
-\item Axiom 3: Fot any sequence of disjoint sets $A_1,A_2,\dots,A_n, P(A_1 \cup A_2 \cup \dots A_n)=\sum\limits_{i=1}^nP(A_i)$, where n is the total number of disjoint sets in the sequence.
+\item Axiom 3: For any sequence of disjoint sets $A_1,A_2,\dots,A_n, P(A_1 \cup A_2 \cup \dots A_n)=\sum\limits_{i=1}^nP(A_i)$, where n is the total number of disjoint sets in the sequence.
 
 \end {itemize}
 
@@ -126,14 +134,34 @@ $$
 Probability of $A$ such that $B$ has occured \cite[p.12]{classnotes.2}:
 $$P(A|B)=\frac{P(A \cap B)}{P(B)}$$ 
 $$P(A|B)P(B)=P(B|A)P(A)$$
-$$P(A_1|B)+P(A_@|B)+\dots P(A_k|B)=1$$
+$$P(A_1|B)+P(A_2|B)+\dots P(A_k|B)=1$$
 Law of total probability:
 $$\sum\limits_{i=1}^k P(B|A_i)P(A_i)=P(B)$$
 
 \subsection*{Bayes Theorem}
 Let the events $A_1,A_2,\dots A_k$ be \emph{disjoint} and \emph{exhaustive} events in the sample space $S$, such that $P(A_i)>0$ and let $B$ be an event such that $P(B)>0$, then, \cite[p.7]{classnotes.3}:
 $$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{j=1}^k P(B|A_i)P(A_j)}$$
-$$P(A_i|B)=\frac{P(A_i \cap B}{P(B)} = \frac{cond. \quad prob.}{law \quad of \quad total \quad prob.}$$
+$$P(A_i|B)=\frac{P(A_i \cap B)}{P(B)} = \frac{cond. \quad prob.}{law \quad of \quad total \quad prob.}$$
+
+\subsection*{Discrete Random Variables}
+\emph{Probability mass function} (pmf) of a discrete \emph{Random Variable} is given by \cite[p.11]{classnotes.3}:
+$$f_X(x)=P(X=x)$$
+and satisfies the following properties
+\begin{enumerate}
+\item $f_X(x)\geq 0; \quad \forall x$
+\item $\sum\limits_{i=1}^{\infty}f(x_i)=1$
+\end{enumerate}
+
+\emph{Cumulative Distribution Function} (cdf) of a discrete \emph{Random Variable} \cite[p.13]{classnotes.3}:
+$$F_X(x)=P(X\leq x)=\sum\limits_{i=1}^{x}f_X(i); \quad \forall x$$
+
+Satisfies the following properties
+\begin{enumerate}
+\item $\lim\limits_{x\to-\infty}F(x)=0$ and $\lim\limits_{x\to\infty}F(x)=1$
+\item $F(x)$ is a \emph{nondecreasing} function of $x$
+\item $F(x)$ is \emph{right-continuous} for every number $x_0, \quad \lim_{x\downarrow x_0}F(x)=F(x_0)$
+\end{enumerate}
+
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{course-references}
