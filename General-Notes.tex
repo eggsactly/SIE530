@@ -113,7 +113,7 @@ Bonferroni's inequality \cite[p.6]{classnotes.2}
 $$P(A\cap B) \geq P(A) + P(B) - 1$$
 
 Boole's inequality \cite[p.5]{classnotes.2}: for any sets $A_1, A_2, \dots \subset S$
-$$P(\bigcup\limits_{i=1}^\infty\leq \sum\limits_{i=1}^\infty P(A_i)$$
+$$P(\bigcup\limits_{i=1}^\infty)\leq \sum\limits_{i=1}^\infty P(A_i)$$
 
 \subsection*{Counting Techniquies}
 
@@ -162,6 +162,21 @@ Satisfies the following properties
 \item $F(x)$ is \emph{right-continuous} for every number $x_0, \quad \lim_{x\downarrow x_0}F(x)=F(x_0)$
 \end{enumerate}
 
+\subsection*{Continuous Random Variables}
+The \emph{probability density function} (pdf) of a continuous \emph{Random Variable} is given by \cite[p.4]{classnotes.4}:
+$$\int_{x_1}^{x_2}f_X(x)dx=P(x_1\leq X\leq x_2), \quad \forall x_1,x_2$$
+And satisfies the following properties:
+\begin{enumerate}
+\item $f(x)\geq 0 \quad \forall x$
+\item $\int_{-\infty}^{\infty}f(x)dx=1$
+\end{enumerate}
+
+The \emph{Cumulative Distribution Function}(cdf) for a continuous \emph{Random Variable} is \cite[p.5]{classnotes.4}:
+$$F_X(x)=P(X \leq x) = \int_{-\infty}^{x}f_X(u)du, \quad \forall x$$
+And satisifes the following property:
+\begin{enumerate}
+\item $\frac{\partial F_X(x)}{\partial x}=f_X(x)$ provided that $F'$ exists and $X$ is a continuous \emph{Random Variable}
+\end{enumerate}
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{course-references}
