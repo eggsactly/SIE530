@@ -61,7 +61,7 @@ $$\hat{\sigma}=S=\sqrt{\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}$$
 
 \item Complementation: collection of elements that do not belong to $A$. $A^c=\{x:x\notin A\}$ \cite[p.17]{classnotes.1}
 
-\item $A\subset B$: The event $A$ is contained in event $B$, $A\subset B$, if every element of $A$ also belonegs to $B$ \cite[p.17]{classnotes.1}
+\item $A\subset B$: The event course-references.bib$A$ is contained in event $B$, $A\subset B$, if every element of $A$ also belonegs to $B$ \cite[p.17]{classnotes.1}
 
 \end{itemize}
 
@@ -130,7 +130,10 @@ $$P(A_1|B)+P(A_@|B)+\dots P(A_k|B)=1$$
 Law of total probability:
 $$\sum\limits_{i=1}^k P(B|A_i)P(A_i)=P(B)$$
 
-
+\subsection*{Bayes Theorem}
+Let the events $A_1,A_2,\dots A_k$ be \emph{disjoint} and \emph{exhaustive} events in the sample space $S$, such that $P(A_i)>0$ and let $B$ be an event such that $P(B)>0$, then, \cite[p.7]{classnotes.3}:
+$$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{j=1}^k P(B|A_i)P(A_j)}$$
+$$P(A_i|B)=\frac{P(A_i \cap B}{P(B)} = \frac{cond. \quad prob.}{law \quad of \quad total \quad prob.}$$
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{course-references}
