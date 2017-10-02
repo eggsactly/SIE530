@@ -190,6 +190,7 @@ And satisifes the following property:
 \emph{mean} & $EX=p$ \\
 \emph{variance} & $Var X =p(1-p)$ \\
 \emph{mgf} & $M_X(t)=(1-p)+pe^t$ \\
+\emph{Notes} & None\\
 \end{tabularx}
 
 \subsubsection*{Binomial(n, p) \cite[p. 621]{StatisticalInference}}
@@ -201,12 +202,35 @@ x
 \emph{mean} & $EX=np$ \\
 \emph{variance} & $Var X =np(1-p)$ \\
 \emph{mgf} & $M_X(t)=[pe^t + (1-p)]^n$ \\
+\emph{Notes} & None\\
 \end{tabularx}
+
+\subsubsection*{Hypergeometric(p) \cite[p. 622]{StatisticalInference}}
+\begin{tabularx}{\textwidth}{ l X }
+\emph{pmf} & $P(X=x|N, M, K)=\frac{
+\begin{pmatrix}
+M \\
+x
+\end{pmatrix}
+\begin{pmatrix}
+N - M \\
+k - x
+\end{pmatrix}
+}{
+\begin{pmatrix}
+N \\
+K
+\end{pmatrix}}; \quad x=0, 1, 2, \dots, K; \quad M - (N - K) \leq x \leq M; \quad N, M, K \geq 0$ \\
+\emph{mean} & $EX=\frac{KM}{N}$ \\
+\emph{variance} & $Var X = \frac{KM}{N} \frac{(N-M)(N-K)}{N(N-1)}$ \\
+\emph{mgf} & None \\
+\emph{Notes} & If $K \ll M$ and $N$, the range $x=0, 1, 2, \dots, K$ will be appropriate.\\
+\end{tabularx}
+
+
 
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{course-references}
-
-
 
 \end{document}
