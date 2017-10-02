@@ -186,12 +186,22 @@ And satisifes the following property:
 \subsection*{Discrete Distributions}
 \subsubsection*{Bernoulli(p) \cite[p. 621]{StatisticalInference}}
 \begin{tabularx}{\textwidth}{ l X }
-\emph{pmf} & $P(X=x|p)=p^x(1-p)1-x; \quad x=0, 1; \quad 0 \leq p \leq 1$ \\
+\emph{pmf} & $P(X=x|p)=p^x(1-p)^{1-x}; \quad x=0, 1; \quad 0 \leq p \leq 1$ \\
 \emph{mean} & $EX=p$ \\
 \emph{variance} & $Var X =p(1-p)$ \\
 \emph{mgf} & $M_X(t)=(1-p)+pe^t$ \\
 \end{tabularx}
 
+\subsubsection*{Binomial(n, p) \cite[p. 621]{StatisticalInference}}
+\begin{tabularx}{\textwidth}{ l X }
+\emph{pmf} & $P(X=x|n, p)=\begin{pmatrix}
+n \\
+x
+\end{pmatrix}p^x(1-p)^{n-x}; \quad x=0, 1, 2, \dots, n; \quad 0 \leq p \leq 1$ \\
+\emph{mean} & $EX=np$ \\
+\emph{variance} & $Var X =np(1-p)$ \\
+\emph{mgf} & $M_X(t)=[pe^t + (1-p)]^n$ \\
+\end{tabularx}
 
 \newpage
 \bibliographystyle{unsrt}
