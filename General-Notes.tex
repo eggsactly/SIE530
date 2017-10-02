@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{accents}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tabularx} % in the preamble
 
 \newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
 
@@ -12,7 +13,7 @@
 \begin{document}
 
 \title{SIE 530 Comprehensive Notes}
-\date{September 24, 2017\\Version: 1}
+\date{October 1, 2017\\Version: 2}
 \maketitle
 {\centering
 
@@ -180,8 +181,22 @@ And satisifes the following property:
 \begin{enumerate}
 \item $\frac{\partial F_X(x)}{\partial x}=f_X(x)$ provided that $F'$ exists and $X$ is a continuous \emph{Random Variable}
 \end{enumerate}
+
+\section*{Table of Common Distributions}
+\subsection*{Discrete Distributions}
+\subsubsection*{Bernoulli(p) \cite[p. 621]{StatisticalInference}}
+\begin{tabularx}{\textwidth}{ l X }
+\emph{pmf} & $P(X=x|p)=p^x(1-p)1-x; \quad x=0, 1; \quad 0 \leq p \leq 1$ \\
+\emph{mean} & $EX=p$ \\
+\emph{variance} & $Var X =p(1-p)$ \\
+\emph{mgf} & $M_X(t)=(1-p)+pe^t$ \\
+\end{tabularx}
+
+
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{course-references}
+
+
 
 \end{document}
