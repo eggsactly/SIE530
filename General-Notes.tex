@@ -229,7 +229,7 @@ K
 
 \subsubsection*{Poisson($\lambda$) \cite[p. 622]{StatisticalInference}}
 \begin{tabularx}{\textwidth}{ l X }
-\emph{pmf} & $P(X=x|\lambda)=\frac{e^{-\lambda}\lambda^x}{x!}; \quad x=0, 1, \dots; \quad 0 \leq p \leq \infty$ \\
+\emph{pmf} & $P(X=x|\lambda)=\frac{e^{-\lambda}\lambda^x}{x!}; \quad x=0, 1, \dots; \quad 0 \leq \lambda <\infty$ \\
 \emph{mean} & $EX=\lambda$ \\
 \emph{variance} & $Var X =\lambda$ \\
 \emph{mgf} & $M_X(t)=e^{\lambda(e^t-1)}$ \\
@@ -239,7 +239,7 @@ K
 \subsection*{Continuous Distributions}
 \subsubsection*{Chi squared(p)\cite[p. 623]{StatisticalInference}}
 \begin{tabularx}{\textwidth}{ l X }
-\emph{pmf} & $f(x|p)=\frac{1}{\Gamma(p/2)2^{p/2}}x^{(p/2)-1}e^{-x/2}; \quad 0 \leq x \leq \infty; \quad p=1, 2, \dots$ \\
+\emph{pmf} & $f(x|p)=\frac{1}{\Gamma(p/2)2^{p/2}}x^{(p/2)-1}e^{-x/2}; \quad 0 \leq x < \infty; \quad p=1, 2, \dots$ \\
 \emph{mean} & $EX = p$ \\
 \emph{variance} & $Var X = 2p$ \\
 \emph{mgf} & $M_X(t)=\begin{pmatrix} \frac{1}{1-2t} \end{pmatrix}^{p/2}, \quad t < \frac{1}{2}$ \\
@@ -248,7 +248,7 @@ K
 
 \subsubsection*{Exponential($\beta$)\cite[p. 624]{StatisticalInference}}
 \begin{tabularx}{\textwidth}{ l X }
-\emph{pmf} & $f(x|p)=\frac{1}{\beta}e^{-x/\beta}; \quad 0 \leq x \leq \infty; \quad \beta>0$ \\
+\emph{pmf} & $f(x|p)=\frac{1}{\beta}e^{-x/\beta}; \quad 0 \leq x < \infty; \quad \beta>0$ \\
 \emph{mean} & $EX = \beta$ \\
 \emph{variance} & $Var X = \beta^2$ \\
 \emph{mgf} & $M_X(t)= \frac{1}{1-\beta t}, \quad t < \frac{1}{\beta}$ \\
@@ -260,7 +260,7 @@ K
 \emph{pmf} & $f(x|\alpha, \beta)=\frac{1}{\Gamma(\alpha)\beta^{\alpha}} x^{\alpha - 1}e^{-x/\beta}; \quad 0 \leq x < \infty; \quad \alpha\beta>0$ \\
 \emph{mean} & $EX = \alpha\beta$ \\
 \emph{variance} & $Var X = \alpha\beta^2$ \\
-\emph{mgf} & $M_X(t)= \frac{1}{1-\beta t}^{\alpha}, \quad t < \frac{1}{\beta}$ \\
+\emph{mgf} & $M_X(t)= \begin{pmatrix}\frac{1}{1-\beta t}\end{pmatrix}^{\alpha}, \quad t < \frac{1}{\beta}$ \\
 \emph{Notes} & Some special cases are exponential ($\alpha = 1$) and shi squared ($\alpha = p/2, \beta = 2$). If $\alpha = \frac{3}{2}$, $Y=\sqrt{X/\beta}$ is \emph{Maxwell}, $Y=1/X$ has the \emph{inverted gama distribution}. Can also be related to the Poisson.\\
 \end{tabularx}
 
