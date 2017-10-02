@@ -246,6 +246,15 @@ K
 \emph{Notes} & Special case of the gamma distribution.\\
 \end{tabularx}
 
+\subsubsection*{Exponential($\beta$)}
+\begin{tabularx}{\textwidth}{ l X }
+\emph{pmf} & $f(x|p)=\frac{1}{\beta}e^{-x/\beta}; \quad 0 \leq x \leq \infty; \quad \beta>0$ \\
+\emph{mean} & $EX = \beta$ \\
+\emph{variance} & $Var X = \beta^2$ \\
+\emph{mgf} & $M_X(t)= \frac{1}{1-\beta t}, \quad t < \frac{1}{\beta}$ \\
+\emph{Notes} & Special case of the gamma distribution. Has the \emph{memoryless} property. Has many special cases: $Y=X^{1/\gamma}$ is \emph{Weibull}, $Y=\sqrt{2X/\beta}$ is \emph{Rayleigh}, $Y=\alpha - \gamma log(X/\beta)$ \emph{Gumbel}\\
+\end{tabularx}
+
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{course-references}
