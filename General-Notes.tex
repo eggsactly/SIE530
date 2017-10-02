@@ -205,7 +205,7 @@ x
 \emph{Notes} & None\\
 \end{tabularx}
 
-\subsubsection*{Hypergeometric(p) \cite[p. 622]{StatisticalInference}}
+\subsubsection*{Hypergeometric \cite[p. 622]{StatisticalInference}}
 \begin{tabularx}{\textwidth}{ l X }
 \emph{pmf} & $P(X=x|N, M, K)=\frac{
 \begin{pmatrix}
@@ -227,7 +227,24 @@ K
 \emph{Notes} & If $K \ll M$ and $N$, the range $x=0, 1, 2, \dots, K$ will be appropriate.\\
 \end{tabularx}
 
+\subsubsection*{Poisson($\lambda$) \cite[p. 622]{StatisticalInference}}
+\begin{tabularx}{\textwidth}{ l X }
+\emph{pmf} & $P(X=x|\lambda)=\frac{e^{-\lambda}\lambda^x}{x!}; \quad x=0, 1, \dots; \quad 0 \leq p \leq \infty$ \\
+\emph{mean} & $EX=\lambda$ \\
+\emph{variance} & $Var X =\lambda$ \\
+\emph{mgf} & $M_X(t)=e^{\lambda(e^t-1)}$ \\
+\emph{Notes} & None\\
+\end{tabularx}
 
+\subsection*{Continuous Distributions}
+\subsubsection*{Chi squared(p)\cite[p. 623]{StatisticalInference}}
+\begin{tabularx}{\textwidth}{ l X }
+\emph{pmf} & $f(x|p)=\frac{1}{\Gamma(p/2)2^{p/2}}x^{(p/2)-1}e^{-x/2}; \quad 0 \leq x \leq \infty; \quad p=1, 2, \dots$ \\
+\emph{mean} & $EX = p$ \\
+\emph{variance} & $Var X = 2p$ \\
+\emph{mgf} & $M_X(t)=\begin{pmatrix} \frac{1}{1-2t} \end{pmatrix}^{p/2}, \quad t < \frac{1}{2}$ \\
+\emph{Notes} & Special case of the gamma distribution.\\
+\end{tabularx}
 
 \newpage
 \bibliographystyle{unsrt}
