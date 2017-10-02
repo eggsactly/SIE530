@@ -246,13 +246,22 @@ K
 \emph{Notes} & Special case of the gamma distribution.\\
 \end{tabularx}
 
-\subsubsection*{Exponential($\beta$)}
+\subsubsection*{Exponential($\beta$)\cite[p. 624]{StatisticalInference}}
 \begin{tabularx}{\textwidth}{ l X }
 \emph{pmf} & $f(x|p)=\frac{1}{\beta}e^{-x/\beta}; \quad 0 \leq x \leq \infty; \quad \beta>0$ \\
 \emph{mean} & $EX = \beta$ \\
 \emph{variance} & $Var X = \beta^2$ \\
 \emph{mgf} & $M_X(t)= \frac{1}{1-\beta t}, \quad t < \frac{1}{\beta}$ \\
 \emph{Notes} & Special case of the gamma distribution. Has the \emph{memoryless} property. Has many special cases: $Y=X^{1/\gamma}$ is \emph{Weibull}, $Y=\sqrt{2X/\beta}$ is \emph{Rayleigh}, $Y=\alpha - \gamma log(X/\beta)$ \emph{Gumbel}\\
+\end{tabularx}
+
+\subsubsection*{Gamma($x|\alpha, \beta$)\cite[p. 624]{StatisticalInference}}
+\begin{tabularx}{\textwidth}{ l X }
+\emph{pmf} & $f(x|\alpha, \beta)=\frac{1}{\Gamma(\alpha)\beta^{\alpha}} x^{\alpha - 1}e^{-x/\beta}; \quad 0 \leq x < \infty; \quad \alpha\beta>0$ \\
+\emph{mean} & $EX = \alpha\beta$ \\
+\emph{variance} & $Var X = \alpha\beta^2$ \\
+\emph{mgf} & $M_X(t)= \frac{1}{1-\beta t}^{\alpha}, \quad t < \frac{1}{\beta}$ \\
+\emph{Notes} & Some special cases are exponential ($\alpha = 1$) and shi squared ($\alpha = p/2, \beta = 2$). If $\alpha = \frac{3}{2}$, $Y=\sqrt{X/\beta}$ is \emph{Maxwell}, $Y=1/X$ has the \emph{inverted gama distribution}. Can also be related to the Poisson.\\
 \end{tabularx}
 
 \newpage
