@@ -13,7 +13,7 @@
 \begin{document}
 
 \title{SIE 530 Comprehensive Notes}
-\date{October 1, 2017\\Version: 2}
+\date{October 3, 2017\\Version: 3}
 \maketitle
 {\centering
 
@@ -180,6 +180,14 @@ $$F_X(x)=P(X \leq x) = \int_{-\infty}^{x}f_X(u)du, \quad \forall x$$
 And satisifes the following property:
 \begin{enumerate}
 \item $\frac{\partial F_X(x)}{\partial x}=f_X(x)$ provided that $F'$ exists and $X$ is a continuous \emph{Random Variable}
+\end{enumerate}
+
+\section*{Properties of a Random Sample}
+\subsection*{Lemma 5.3.2 (Facts about chi squared random variables)\cite[p. 219]{StatisticalInference}}
+We use the notation $\chi_p^2$ to denote a chi squared random variable with p degrees of freedom. 
+\begin{enumerate}
+\item If $Z$ is a $n(0, 1)$ \emph{random variable}, then $Z^2\sim\chi_1^2$; that is, the square of a standard normal random variable is a chi squared random variable
+\item If $\chi_1,\dots\chi_n$ are independent and $\chi_i\sim\chi_{p_i}^2$, then $\chi_1+\dots+\chi_n\sim\chi_{p_1+\dots+p_n}^2$; that is, independent chi squared variables add to a chi squared variable, and the degrees of freedom also add. 
 \end{enumerate}
 
 \section*{Table of Common Distributions}
