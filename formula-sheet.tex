@@ -1,0 +1,241 @@
+\documentclass[10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage[hidelinks]{hyperref}
+
+\pdfinfo{
+  /Title (example.pdf)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Seamus)
+  /Subject (Example)
+  /Keywords (pdflatex, latex,pdftex,tex)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+%\footnotesize\usepackage{amsmath}
+\begin{multicols}{3}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\underline{SIE 530 Formula Sheet}} \\
+\end{center}
+
+\section{Set Notation}
+\begin{tabular}{ l l }
+Commutativity: &
+\begin{tabular}{ l }
+$A \cup B = B \cup A$ \\
+$ A \cap B = B \cap A$ \\
+\end{tabular} \\
+
+Associativity: &
+\begin{tabular}{ l }
+$A\cup (B \cup C)=(A \cup B) \cup C$ \\
+$A \cap (B \cap C) = (A \cap B) \cap C$ \\
+\end{tabular} \\
+
+Distributive Laws: &
+\begin{tabular}{ l }
+$A \cap(B \cup C) = (A \cap B) \cup ( A \cap C)$ \\
+$ A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ \\
+\end{tabular}\\
+
+DeMorgan's Laws: &
+\begin{tabular}{ l }
+$(A \cup B)^c=A^c \cap B^c$ \\
+$(A \cap B)^c=A^c\cup B^c$ \\
+\end{tabular} \\
+\end{tabular}
+
+\section{Probability Theory}
+
+Central Tendency: sample average/mean \cite[p.14]{classnotes.1}.
+$$\bar{x}=\frac{\sum\limits_{i=1}^{n} x_i}{n}$$
+
+Scatter/dispersion: \emph{sample variance} or \emph{sample standard deviation} \cite[p.14]{classnotes.1}.
+
+$$\hat{\sigma}^2=S^2=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1};\quad\hat{\sigma}=S=\sqrt{\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}$$
+
+\section{Definition of Probability \cite[p.4]{classnotes.2}}
+[P \(\) : \{set of all possible events\} $\rightarrow [0,1]$]
+\begin{itemize}
+\item Axiom 1: For any event $A, P(A)\geq 0$ (nonnegatove).
+\item Axiom 2: $P(S)=1$
+\item Axiom 3: For any sequence of disjoint sets $A_1,A_2,\dots,A_n, P(A_1 \cup A_2 \cup \dots A_n)=\sum\limits_{i=1}^nP(A_i)$, where n is the total number of disjoint sets in the sequence.
+\end {itemize}
+\begin{itemize}
+\item Properties:
+\begin{itemize}
+\item $P(A)=1-P(A^c);$
+\item $P(\emptyset)=0$
+\item $P(S)=1$
+\item if $A$ and $B$ are disjoint $P(A\cup B)=0$
+\item $A\subset B \rightarrow P(A)\leq (B)$
+\end{itemize}
+\item Additive Law of probability
+\begin{itemize}
+\item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+\end{itemize}
+\end{itemize}
+
+\section{Counting Rules}
+\begin{tabular}{| c | c | c |} \hline
+ & Without replacement & With Replacement \\ \hline
+Ordered: & $P_{k,n} = \frac{n!}{(n-k)!}$ & $n^r$ \\ \hline
+Unordered: & $C_{k,n}=
+\begin{pmatrix}
+n \\
+k
+\end{pmatrix}
+=\frac{n!}{k!(n-k)!}
+$ & 
+$
+\begin{pmatrix}
+n + r - 1\\
+k
+\end{pmatrix}$
+\\ \hline
+\end{tabular}
+
+\section{Bayes Theorem}
+Let the events $A_1,A_2,\dots A_k$ be \emph{disjoint} and \emph{exhaustive} events in the sample space $S$, such that $P(A_i)>0$ and let $B$ be an event such that $P(B)>0$, then, \cite[p.7]{classnotes.3}:
+$$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{j=1}^k P(B|A_i)P(A_j)}$$
+$$P(A_i|B)=\frac{P(A_i \cap B)}{P(B)} = \frac{cond. \quad prob.}{law \quad of \quad total \quad prob.}$$
+$$P(A|B)P(B)=P(B|A)P(A)$$
+$$P(A_1|B)+P(A_2|B)+\dots P(A_k|B)=1$$
+Conditional Distribution
+$$f(y|x)=P(Y=y|X=x)=\frac{f_{XY}(x,y)}{f_X(x)}$$
+
+\section{Discrete Random Variables}
+\emph{Probability mass function} (pmf) of a discrete \emph{Random Variable} is given by \cite[p.11]{classnotes.3}:
+$$f_X(x)=P(X=x)$$
+and satisfies the following properties
+\begin{enumerate}
+\item $f_X(x)\geq 0; \quad \forall x$
+\item $\sum\limits_{i=1}^{\infty}f(x_i)=1$
+\end{enumerate}
+
+\emph{Cumulative Distribution Function} (cdf) of a discrete \emph{Random Variable} \cite[p.13]{classnotes.3}:
+$$F_X(x)=P(X\leq x)=\sum\limits_{i=1}^{x}f_X(i); \quad \forall x$$
+
+Satisfies the following properties
+\begin{enumerate}
+\item $\lim\limits_{x\to-\infty}F(x)=0$ and $\lim\limits_{x\to\infty}F(x)=1$
+\item $F(x)$ is a \emph{nondecreasing} function of $x$
+\item $F(x)$ is \emph{right-continuous} for every number $x_0, \quad \lim_{x\downarrow x_0}F(x)=F(x_0)$
+\end{enumerate}
+
+\section{Continuous Random Variables}
+The \emph{probability density function} (pdf) of a continuous \emph{Random Variable} is given by \cite[p.4]{classnotes.4}:
+$$\int_{x_1}^{x_2}f_X(x)dx=P(x_1\leq X\leq x_2), \quad \forall x_1,x_2$$
+And satisfies the following properties:
+\begin{enumerate}
+\item $f(x)\geq 0 \quad \forall x$
+\item $\int_{-\infty}^{\infty}f(x)dx=1$
+\end{enumerate}
+
+The \emph{Cumulative Distribution Function}(cdf) for a continuous \emph{Random Variable} is \cite[p.5]{classnotes.4}:
+$$F_X(x)=P(X \leq x) = \int_{-\infty}^{x}f_X(u)du, \quad \forall x$$
+And satisifes the following property:
+\begin{enumerate}
+\item $\frac{\partial F_X(x)}{\partial x}=f_X(x)$ provided that $F'$ exists and $X$ is a continuous \emph{Random Variable}
+\end{enumerate}
+
+\section{Marginal Distribution}
+Discrete Model:\\
+$f_X(x)=\sum\limits_{y\in\Re}f_{XY}(x,y)$ and $f_Y(y)=\sum\limits_{x\in\Re}f_{XY}(x,y)$
+Continuous Model:\\
+$f_X(x)=\int\limits_{-\infty}^{\infty}f_{XY}(x,y)dy$ and $f_Y(y)=\int\limits_{-\infty}^{\infty}f_{XY}(x,y)dx$
+
+\section{Expectation}
+Univariate:\\
+$$E(X)=\mu_X=\sum\limits_{x\in X} xf(x)$$
+$$E(X)=\mu_X=\int\limits_{-\infty}^{\infty}xf(x)dx$$
+Multivariate:\\
+$$E(Y|X=x)=\mu_X=\sum\limits_{x\in X} yf(y|x)$$
+$$E(Y|X=x)=\mu_X=\int\limits_{-\infty}^{\infty}yf(y|x)dx$$
+
+\section{Variance}
+Univariate:\\
+$$Var(X)=\sigma_X^2=E[(X-\mu)^2]$$
+$$Var(X)=E(X^2)-[E(X)]^2$$
+Multivariate:\\
+$$Var(Y|x)=E(Y^2|x)-(E(Y|x))^2$$
+$$Var(X)=E(Var(X|Y))+Var[E(X|Y)]$$
+
+\section{Function of an RV}
+\emph{Method 1:} Let X be a random variable with pdf $f_X(x)$.\\
+1st step : $F_Y(y) = P(Y\leq y)=P[r(X)\leq y]=\int_{x:r(x)\leq Y}f_X(x)dx$\\
+2nd step : $f_Y(y) = \frac{dF_Y(y)}{dy}$
+
+\emph{Method 2:}
+$f_Y(y)=\begin{cases} 
+f_X(r^{-1}(y))|\frac{\partial r^{-1}(y)}{\partial y}| & y\in Y \subseteq R;\\
+0 & otherwise
+   \end{cases}$
+
+
+% You can even have references
+\rule{0.3\linewidth}{0.25pt}
+\scriptsize
+\bibliographystyle{unsrt} 
+\bibliography{course-references}
+\end{multicols}
+\end{document}
