@@ -6,14 +6,15 @@
 \usepackage{amsmath,amsthm,amsfonts,amssymb}
 \usepackage{color,graphicx,overpic}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
 
 \pdfinfo{
-  /Title (example.pdf)
+  /Title (formula-sheet.pdf)
   /Creator (TeX)
   /Producer (pdfTeX 1.40.0)
-  /Author (Seamus)
-  /Subject (Example)
-  /Keywords (pdflatex, latex,pdftex,tex)}
+  /Author (Garrett Weaver)
+  /Subject (SIE 530)
+  /Keywords (statistics, engineering, masters, Arizona, Liu)}
 
 % This sets page margins to .5 inch if using letter paper, and to 1cm
 % if using A4 paper. (This probably isn't strictly necessary.)
@@ -60,6 +61,7 @@
 % -----------------------------------------------------------------------
 
 \begin{document}
+
 \raggedright
 %\footnotesize\usepackage{amsmath}
 \begin{multicols}{3}
@@ -78,43 +80,42 @@
 \end{center}
 
 \section{Set Notation}
-\begin{tabular}{ l l }
+\hspace*{-0.2cm}\begin{tabularx}{\textwidth/3}{ l X }
 Commutativity: &
-\begin{tabular}{ l }
+\hspace*{-0.5cm}\begin{tabular}{ l }
 $A \cup B = B \cup A$ \\
 $ A \cap B = B \cap A$ \\
-\end{tabular} \\
+\end{tabular}\hspace*{-1cm} \\
 
 Associativity: &
-\begin{tabular}{ l }
+\hspace*{-0.5cm}\begin{tabular}{ l }
 $A\cup (B \cup C)=(A \cup B) \cup C$ \\
 $A \cap (B \cap C) = (A \cap B) \cap C$ \\
 \end{tabular} \\
 
 Distributive Laws: &
-\begin{tabular}{ l }
+\hspace*{-0.5cm}\begin{tabular}{ l }
 $A \cap(B \cup C) = (A \cap B) \cup ( A \cap C)$ \\
 $ A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ \\
 \end{tabular}\\
 
 DeMorgan's Laws: &
-\begin{tabular}{ l }
+\hspace*{-0.5cm}\begin{tabular}{ l }
 $(A \cup B)^c=A^c \cap B^c$ \\
 $(A \cap B)^c=A^c\cup B^c$ \\
 \end{tabular} \\
-\end{tabular}
+\end{tabularx}
 
 \section{Probability Theory}
 
 Central Tendency: sample average/mean \cite[p.14]{classnotes.1}.
 $$\bar{x}=\frac{\sum\limits_{i=1}^{n} x_i}{n}$$
 
-Scatter/dispersion: \emph{sample variance} or \emph{sample standard deviation} \cite[p.14]{classnotes.1}.
-
+Scatter/dispersion: \emph{sample variance} or \emph{sample standard deviation} %\cite[p.14]{classnotes.1}.
 $$\hat{\sigma}^2=S^2=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1};\quad\hat{\sigma}=S=\sqrt{\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}$$
 
-\section{Definition of Probability \cite[p.4]{classnotes.2}}
-[P \(\) : \{set of all possible events\} $\rightarrow [0,1]$]
+\section{Definition of Probability}
+[P \(\) : \{set of all possible events\} $\rightarrow [0,1]$] %\cite[p.4]{classnotes.2}%
 \begin{itemize}
 \item Axiom 1: For any event $A, P(A)\geq 0$ (nonnegatove).
 \item Axiom 2: $P(S)=1$
@@ -136,7 +137,7 @@ $$\hat{\sigma}^2=S^2=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1};\quad\hat{
 \end{itemize}
 
 \section{Counting Rules}
-\begin{tabular}{| c | c | c |} \hline
+\begin{tabularx}{\textwidth/3}{| c | c | X |} \hline
  & Without replacement & With Replacement \\ \hline
 Ordered: & $P_{k,n} = \frac{n!}{(n-k)!}$ & $n^r$ \\ \hline
 Unordered: & $C_{k,n}=
@@ -152,10 +153,10 @@ n + r - 1\\
 k
 \end{pmatrix}$
 \\ \hline
-\end{tabular}
+\end{tabularx}
 
 \section{Bayes Theorem}
-Let the events $A_1,A_2,\dots A_k$ be \emph{disjoint} and \emph{exhaustive} events in the sample space $S$, such that $P(A_i)>0$ and let $B$ be an event such that $P(B)>0$, then, \cite[p.7]{classnotes.3}:
+Let the events $A_1,A_2,\dots A_k$ be \emph{disjoint} and \emph{exhaustive} events in the sample space $S$, such that $P(A_i)>0$ and let $B$ be an event such that $P(B)>0$, then, %\cite[p.7]{classnotes.3}:
 $$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{j=1}^k P(B|A_i)P(A_j)}$$
 $$P(A_i|B)=\frac{P(A_i \cap B)}{P(B)} = \frac{cond. \quad prob.}{law \quad of \quad total \quad prob.}$$
 $$P(A|B)P(B)=P(B|A)P(A)$$
@@ -164,7 +165,7 @@ Conditional Distribution
 $$f(y|x)=P(Y=y|X=x)=\frac{f_{XY}(x,y)}{f_X(x)}$$
 
 \section{Discrete Random Variables}
-\emph{Probability mass function} (pmf) of a discrete \emph{Random Variable} is given by \cite[p.11]{classnotes.3}:
+\emph{Probability mass function} (pmf) of a discrete \emph{Random Variable} is given by %\cite[p.11]{classnotes.3}:
 $$f_X(x)=P(X=x)$$
 and satisfies the following properties
 \begin{enumerate}
@@ -172,7 +173,7 @@ and satisfies the following properties
 \item $\sum\limits_{i=1}^{\infty}f(x_i)=1$
 \end{enumerate}
 
-\emph{Cumulative Distribution Function} (cdf) of a discrete \emph{Random Variable} \cite[p.13]{classnotes.3}:
+\emph{Cumulative Distribution Function} (cdf) of a discrete \emph{Random Variable} %\cite[p.13]{classnotes.3}:
 $$F_X(x)=P(X\leq x)=\sum\limits_{i=1}^{x}f_X(i); \quad \forall x$$
 
 Satisfies the following properties
@@ -183,7 +184,7 @@ Satisfies the following properties
 \end{enumerate}
 
 \section{Continuous Random Variables}
-The \emph{probability density function} (pdf) of a continuous \emph{Random Variable} is given by \cite[p.4]{classnotes.4}:
+The \emph{probability density function} (pdf) of a continuous \emph{Random Variable} is given by %\cite[p.4]{classnotes.4}:
 $$\int_{x_1}^{x_2}f_X(x)dx=P(x_1\leq X\leq x_2), \quad \forall x_1,x_2$$
 And satisfies the following properties:
 \begin{enumerate}
@@ -191,7 +192,7 @@ And satisfies the following properties:
 \item $\int_{-\infty}^{\infty}f(x)dx=1$
 \end{enumerate}
 
-The \emph{Cumulative Distribution Function}(cdf) for a continuous \emph{Random Variable} is \cite[p.5]{classnotes.4}:
+The \emph{Cumulative Distribution Function}(cdf) for a continuous \emph{Random Variable} is %\cite[p.5]{classnotes.4}:
 $$F_X(x)=P(X \leq x) = \int_{-\infty}^{x}f_X(u)du, \quad \forall x$$
 And satisifes the following property:
 \begin{enumerate}
@@ -221,16 +222,36 @@ $$Var(Y|x)=E(Y^2|x)-(E(Y|x))^2$$
 $$Var(X)=E(Var(X|Y))+Var[E(X|Y)]$$
 
 \section{Function of an RV}
-\emph{Method 1:} Let X be a random variable with pdf $f_X(x)$.\\
+\subsection{Method 1:} Let X be a random variable with pdf $f_X(x)$.\\
 1st step : $F_Y(y) = P(Y\leq y)=P[r(X)\leq y]=\int_{x:r(x)\leq Y}f_X(x)dx$\\
 2nd step : $f_Y(y) = \frac{dF_Y(y)}{dy}$
 
-\emph{Method 2:}
+\subsection{Method 2:}
 $f_Y(y)=\begin{cases} 
 f_X(r^{-1}(y))|\frac{\partial r^{-1}(y)}{\partial y}| & y\in Y \subseteq R;\\
 0 & otherwise
    \end{cases}$
 
+\subsection{Method 3:}
+$$Z=X+Y$$
+$$M_z(t)=M_X(t)*M_Y(t)$$
+Solve the equation, whatever PDF the product ends up looking as will be the function Z follows.
+
+\section{Exponential Family}
+$$f(x|\theta)=h(x)*c(\theta)exp\begin{pmatrix}\sum\limits_{i=1}^k w_i(\theta)t_i(x)\end{pmatrix}$$
+where $h(x)\geq 0$ and $t_i(x)$ are real-valued, $c(\theta)\geq 0$ and $w_i(\theta)$ are real-valued and not dependent on x. 
+
+\section{Moment Generating Function}
+$$M_X(t)=E[e^{tX}]$$
+$$M_X(t)=\int\limits_{-\infty}^{\infty}e^{tx}f_X(x)dx$$
+$$M_X(t)=\sum\limits_{x}e^{tx}P(X=x)$$
+Satsifies the following properties
+$$M_X^{(n)}(t)=\frac{d^nM_X(t)}{dt^n}\bigg|_{t=0}$$
+
+\section{Joint pdf/pmf of Random Sample}
+Given the iid random sample $X_1, X_2,\dots X_n$
+$$f(x_1, x_2,\dots x_n)=f(x_1)f(x_2)\dots f(x_n)=\prod\limits_{i=1}^n f(x_i)$$
+$$f(x_1,x_2,\dots x_n|\theta)=\prod\limits_{i=1}^n f(x_i|\theta)$$
 
 % You can even have references
 \rule{0.3\linewidth}{0.25pt}
@@ -239,3 +260,4 @@ f_X(r^{-1}(y))|\frac{\partial r^{-1}(y)}{\partial y}| & y\in Y \subseteq R;\\
 \bibliography{course-references}
 \end{multicols}
 \end{document}
+
