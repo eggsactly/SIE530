@@ -136,6 +136,8 @@ $$\hat{\sigma}^2=S^2=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1};\quad\hat{
 \end{itemize}
 \end{itemize}
 
+Independent: Two events $A$ and $B$ are said to be independent if $P(A|B)=P(A)$
+
 \section{Counting Rules}
 \begin{tabularx}{\textwidth/3}{| c | c | X |} \hline
  & Without replacement & With Replacement \\ \hline
@@ -155,8 +157,12 @@ k
 \\ \hline
 \end{tabularx}
 
-\section{Integration By Parts}
-$$\int u(x)v'(x)dx=u(x)v(x)-\int u'(x)v(x)dx$$
+\section{Common Sums and Integrations}
+$\sum_{k=0}^\infty \frac{z^k}{k!} = e^z\,\!;$ $\sum_{k=0}^\infty k\frac{z^k}{k!} = z e^z\,\!;$
+$\sum_{k=1}^\infty\frac{z^k}{k}=-ln(1-z);$ $\sum_{k=1}^\infty z^k=\frac{z}{1-z};$ $\sum_{k=1}^\infty kz^k=\frac{z}{(1-z)^2}$
+$\int u(x)v'(x)dx=u(x)v(x)-\int u'(x)v(x)dx$
+$\int xe^{ax}dx=\begin{pmatrix}\frac{x}{a}-\frac{1}{a^2}\end{pmatrix}e^{ax}$
+$\int x^2e^{ax}dx=\begin{pmatrix}\frac{x^2}{a}-\frac{2x}{a^2}+\frac{2}{a^3}\end{pmatrix}e^{ax}$
 
 \section{Bayes Theorem}
 Let the events $A_1,A_2,\dots A_k$ be \emph{disjoint} and \emph{exhaustive} events in the sample space $S$, such that $P(A_i)>0$ and let $B$ be an event such that $P(B)>0$, then, %\cite[p.7]{classnotes.3}:
@@ -250,6 +256,7 @@ $$M_X(t)=\int\limits_{-\infty}^{\infty}e^{tx}f_X(x)dx$$
 $$M_X(t)=\sum\limits_{x}e^{tx}P(X=x)$$
 Satsifies the following properties
 $$M_X^{(n)}(t)=\frac{d^nM_X(t)}{dt^n}\bigg|_{t=0}$$
+Also has the property:
 $$E(X)=\frac{dM_X(t)}{dt}\bigg|_{t=0};\quad Var(X)=\frac{d^2M_X(t)}{dt^2}\bigg|_{t=0}$$
 
 \section{Joint pdf/pmf of Random Sample}
