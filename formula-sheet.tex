@@ -250,11 +250,16 @@ $$M_X(t)=\int\limits_{-\infty}^{\infty}e^{tx}f_X(x)dx$$
 $$M_X(t)=\sum\limits_{x}e^{tx}P(X=x)$$
 Satsifies the following properties
 $$M_X^{(n)}(t)=\frac{d^nM_X(t)}{dt^n}\bigg|_{t=0}$$
+$$E(X)=\frac{dM_X(t)}{dt}\bigg|_{t=0};\quad Var(X)=\frac{d^2M_X(t)}{dt^2}\bigg|_{t=0}$$
 
 \section{Joint pdf/pmf of Random Sample}
 Given the iid random sample $X_1, X_2,\dots X_n$
 $$f(x_1, x_2,\dots x_n)=f(x_1)f(x_2)\dots f(x_n)=\prod\limits_{i=1}^n f(x_i)$$
 $$f(x_1,x_2,\dots x_n|\theta)=\prod\limits_{i=1}^n f(x_i|\theta)$$
+
+\section{Student's t-distribution}
+Z-statistic:
+$$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$$
 
 % You can even have references
 \rule{0.3\linewidth}{0.25pt}
