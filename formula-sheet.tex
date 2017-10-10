@@ -7,7 +7,7 @@
 \usepackage{color,graphicx,overpic}
 \usepackage[hidelinks]{hyperref}
 \usepackage{tabularx}
-
+\newcommand\NumCols{3}
 \pdfinfo{
   /Title (formula-sheet.pdf)
   /Creator (TeX)
@@ -64,7 +64,7 @@
 
 \raggedright
 %\footnotesize\usepackage{amsmath}
-\begin{multicols}{3}
+\begin{multicols}{\NumCols}
 
 
 % multicol parameters
@@ -80,7 +80,7 @@
 \end{center}
 
 \section{Set Notation}
-\hspace*{-0.2cm}\begin{tabularx}{\textwidth/3}{ l X }
+\hspace*{-0.2cm}\begin{tabularx}{\textwidth/\NumCols}{ l X }
 Commutativity: &
 \hspace*{-0.5cm}\begin{tabular}{ l }
 $A \cup B = B \cup A$ \\
@@ -267,6 +267,49 @@ $$f(x_1,x_2,\dots x_n|\theta)=\prod\limits_{i=1}^n f(x_i|\theta)$$
 \section{Student's t-distribution}
 Z-statistic:
 $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$$
+
+\section{Common Distributions}
+\subsection{Poisson($\lambda$)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & $P(X=x|\lambda)=\frac{e^{-\lambda}\lambda^x}{x!}; \quad x=0, 1, \dots; \quad 0 \leq \lambda <\infty$ \\
+\emph{mean and variance} & $EX=\lambda$; $Var X =\lambda$ \\
+\emph{mgf} & $M_X(t)=e^{\lambda(e^t-1)}$ \\
+\end{tabularx}
+
+\subsection{Chi squared(p)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & $f(x|p)=\frac{1}{\Gamma(p/2)2^{p/2}}x^{(p/2)-1}e^{-x/2}; \quad 0 \leq x < \infty; \quad p=1, 2, \dots$ \\
+\emph{mean and variance} & $EX = p$; $Var X = 2p$ \\
+\emph{mgf} & $M_X(t)=\begin{pmatrix} \frac{1}{1-2t} \end{pmatrix}^{p/2}, \quad t < \frac{1}{2}$ \\
+\end{tabularx}
+
+\subsection{Exponential($\beta$)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & $f(x|p)=\frac{1}{\beta}e^{-x/\beta}; \quad 0 \leq x < \infty; \quad \beta>0$ \\
+\emph{mean and variance} & $EX = \beta$; $Var X = \beta^2$ \\
+\emph{mgf} & $M_X(t)= \frac{1}{1-\beta t}, \quad t < \frac{1}{\beta}$ \\
+\end{tabularx}
+
+\subsection{Gamma($x|\alpha, \beta$)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & $f(x|\alpha, \beta)=\frac{1}{\Gamma(\alpha)\beta^{\alpha}} x^{\alpha - 1}e^{-x/\beta}; \quad 0 \leq x < \infty; \quad \alpha\beta>0$ \\
+\emph{mean and variance} & $EX = \alpha\beta$; $Var X = \alpha\beta^2$ \\
+\emph{mgf} & $M_X(t)= \begin{pmatrix}\frac{1}{1-\beta t}\end{pmatrix}^{\alpha}, \quad t < \frac{1}{\beta}$ \\
+\end{tabularx}
+
+\subsection{Normal($\mu, \sigma^2$)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & $f(x|\mu, \sigma^2)=\frac{1}{\sqrt{2\pi \sigma}}e^{-(x-\mu)^2/(2\sigma^2)}; \quad -\infty < x < \infty; \quad -\infty < \mu < \infty$ \\
+\emph{mean and variance} & $EX = \mu$; $Var X = \sigma^2$ \\
+\emph{mgf} & $M_X(t)= e^{\mu t + \sigma^2t^2/2}$ \\
+\end{tabularx}
+
+\subsection{Uniform($a, b$)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & $f(x|a, b)=\frac{1}{b-a}, \quad a \leq x \leq b$ \\
+\emph{mean and variance} & $EX = \frac{b+a}{2}$; $Var X = \frac{(b-a)^2}{12}$ \\
+\emph{mgf} & $M_X(t)=\frac{e^{bt}-e^{at}}{(b-a)t}$ \\
+\end{tabularx}
 
 % You can even have references
 \rule{0.3\linewidth}{0.25pt}
