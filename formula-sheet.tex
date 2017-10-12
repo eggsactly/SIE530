@@ -281,6 +281,13 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{mgf} & $\frac{{N-K \choose n} \scriptstyle{\,_2F_1(-n, -K; N - K - n + 1; e^{t}) } }{{N \choose n}}  \,\!$ \\
 \end{tabularx}
 
+\subsection{Binomial($x$)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & $\textstyle {n \choose k}\, p^k (1-p)^{n-k}$; \\
+\emph{mean and variance} & $EX=np$; $Var X =np(1-p)$ \\
+\emph{mgf} & $(1-p + pe^t)^n \!$ \\
+\end{tabularx}
+
 \subsection{Poisson($\lambda$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pmf} & $P(X=x|\lambda)=\frac{e^{-\lambda}\lambda^x}{x!}$; $x=0, 1, \dots$; $0 \leq \lambda <\infty$ \\
