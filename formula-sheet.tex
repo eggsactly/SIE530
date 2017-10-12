@@ -284,6 +284,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \subsection{Binomial($x$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pmf} & $\textstyle {n \choose k}\, p^k (1-p)^{n-k}$; \\
+\emph{cdf} & $\textstyle I_{1-p}(n - k, 1 + k)$ \\
 \emph{mean and variance} & $EX=np$; $Var X =np(1-p)$ \\
 \emph{mgf} & $(1-p + pe^t)^n \!$ \\
 \end{tabularx}
@@ -291,41 +292,51 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \subsection{Poisson($\lambda$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pmf} & $P(X=x|\lambda)=\frac{e^{-\lambda}\lambda^x}{x!}$; $x=0, 1, \dots$; $0 \leq \lambda <\infty$ \\
+\emph{cdf} & $\frac{\Gamma(\lfloor k+1\rfloor, \lambda)}{\lfloor k\rfloor !}$ \\
 \emph{mean and variance} & $EX=\lambda$; $Var X =\lambda$ \\
 \emph{mgf} & $M_X(t)=e^{\lambda(e^t-1)}$ \\
 \end{tabularx}
 
 \subsection{Chi squared(p)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
-\emph{pmf} & $f(x|p)=\frac{1}{\Gamma(p/2)2^{p/2}}x^{(p/2)-1}e^{-x/2}$; $0 \leq x < \infty$; $p=1, 2, \dots$ \\
+\emph{pdf} & $f(x|p)=\frac{1}{\Gamma(p/2)2^{p/2}}x^{(p/2)-1}e^{-x/2}$; $0 \leq x < \infty$; $p=1, 2, \dots$ \\
+\emph{cdf} & $\frac{1}{\Gamma\left(\frac{k}{2} \right)} \; \gamma\left(\frac{k}{2},\,\frac{x}{2}\right)$ \\
 \emph{mean and variance} & $EX = p$; $Var X = 2p$ \\
 \emph{mgf} & $M_X(t)=\begin{pmatrix} \frac{1}{1-2t} \end{pmatrix}^{p/2}, \quad t < \frac{1}{2}$ \\
 \end{tabularx}
 
 \subsection{Exponential($\beta$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
-\emph{pmf} & $f(x|p)=\frac{1}{\beta}e^{-x/\beta}$; $0 \leq x < \infty$; $\beta>0$ \\
+\emph{pdf} & $f(x|p)=\frac{1}{\beta}e^{-x/\beta}$; $0 \leq x < \infty$; $\beta>0$ \\
+\emph{cdf} & $1-e^{-\lambda x}$ \\
 \emph{mean and variance} & $EX = \beta$; $Var X = \beta^2$ \\
 \emph{mgf} & $M_X(t)= \frac{1}{1-\beta t}, \quad t < \frac{1}{\beta}$ \\
 \end{tabularx}
 
 \subsection{Gamma($x|\alpha, \beta$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
-\emph{pmf} & $f(x|\alpha, \beta)=\frac{1}{\Gamma(\alpha)\beta^{\alpha}} x^{\alpha - 1}e^{-x/\beta};$ $0 \leq x < \infty$; $\alpha\beta>0$ \\
+\emph{pdf} & $f(x|\alpha, \beta)=\frac{1}{\Gamma(\alpha)\beta^{\alpha}} x^{\alpha - 1}e^{-x/\beta};$ $0 \leq x < \infty$; $\alpha\beta>0$ \\
+\emph{cdf} & $\frac{1}{\Gamma(k)} \gamma\left(k,\, \frac{x}{\theta}\right)$ \\
 \emph{mean and variance} & $EX = \alpha\beta$; $Var X = \alpha\beta^2$ \\
 \emph{mgf} & $M_X(t)= \begin{pmatrix}\frac{1}{1-\beta t}\end{pmatrix}^{\alpha}, \quad t < \frac{1}{\beta}$ \\
 \end{tabularx}
 
 \subsection{Normal($\mu, \sigma^2$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
-\emph{pmf} & $f(x|\mu, \sigma^2)=\frac{1}{\sqrt{2\pi \sigma}}e^{-(x-\mu)^2/(2\sigma^2)}$; $-\infty < x < \infty$; $-\infty < \mu < \infty$ \\
+\emph{pdf} & $f(x|\mu, \sigma^2)=\frac{1}{\sqrt{2\pi \sigma}}e^{-(x-\mu)^2/(2\sigma^2)}$; $-\infty < x < \infty$; $-\infty < \mu < \infty$ \\
+\emph{cdf} & $\tfrac12\left[1 + \operatorname{erf}\left( \frac{x-\mu}{\sigma\sqrt{2}}\right)\right]$\\
 \emph{mean and variance} & $EX = \mu$; $Var X = \sigma^2$ \\
 \emph{mgf} & $M_X(t)= e^{\mu t + \sigma^2t^2/2}$ \\
 \end{tabularx}
 
 \subsection{Uniform($a, b$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
-\emph{pmf} & $f(x|a, b)=\frac{1}{b-a}$, $a \leq x \leq b$ \\
+\emph{pdf} & $f(x|a, b)=\frac{1}{b-a}$, $a \leq x \leq b$ \\
+\emph{cdf} & $\begin{cases}
+                  0               & \text{for } x < a \\
+                  \frac{x-a}{b-a} & \text{for } x \in [a,b) \\
+                  1               & \text{for } x \ge b
+                \end{cases}$ \\
 \emph{mean and variance} & $EX = \frac{b+a}{2}$; $Var X = \frac{(b-a)^2}{12}$ \\
 \emph{mgf} & $M_X(t)=\frac{e^{bt}-e^{at}}{(b-a)t}$ \\
 \end{tabularx}
