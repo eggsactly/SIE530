@@ -244,6 +244,21 @@ $f_Y(y)=\begin{cases}
 f_X(r^{-1}(y))|\frac{\partial r^{-1}(y)}{\partial y}| & y\in Y \subseteq R;\\
 0 & otherwise
    \end{cases}$
+\subsubsection{Broken Down Example}
+Assume X and Y are independent.
+Say $Z_1=X+Y$ and $Z_2=\frac{X}{X+Y}$\\
+$$\begin{cases} Z_1 = X+Y\\Z_2=\frac{X}{X+Y} \end{cases}$$
+Therefore
+$$\begin{cases} X=Z_1Z_2\\Y=Z_1(1-Z_2) \end{cases}$$
+$$|J|=
+\begin{vmatrix} \frac{\partial X}{\partial Z_1} & \frac{\partial X}{\partial Z_2} \\
+\frac{\partial Y}{\partial Z_1} & \partial{Y}{\partial Z_2} \end{vmatrix}$$
+$$=
+\begin{vmatrix}Z_2 & Z_1 \\
+1-Z_2 & -Z_1\end{vmatrix}
+=|-Z_1Z_2-Z_1(1-Z_2)| = Z_1
+$$
+$$f_{Z_1Z_2}(Z_1, Z_2)=f_{XY}(X,Y)*|J|$$
 
 \subsection{Method 3:}
 $$Z=X+Y$$
