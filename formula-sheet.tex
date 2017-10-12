@@ -279,6 +279,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{pmf} & ${{{K \choose k} {{N-K} \choose {n-k}}}\over {N \choose n}}$; \\
 \emph{mean and variance} & $EX=n {K\over N}$; $Var X =n{K\over N}{(N-K)\over N}{N-n\over N-1}$ \\
 \emph{mgf} & $\frac{{N-K \choose n} \scriptstyle{\,_2F_1(-n, -K; N - K - n + 1; e^{t}) } }{{N \choose n}}  \,\!$ \\
+\emph{notes} & N: sample size, n: selected items w/o replacement, D: items of interest in the population, x: number of points of interest in n with property D.
 \end{tabularx}
 
 \subsection{Binomial($x$)}
@@ -287,6 +288,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{cdf} & $\textstyle I_{1-p}(n - k, 1 + k)$ \\
 \emph{mean and variance} & $EX=np$; $Var X =np(1-p)$ \\
 \emph{mgf} & $(1-p + pe^t)^n \!$ \\
+\emph{notes} & Probablity for two mutually exclusive outcomes. p: probability of desired outcome, n: sample size, x: number of items with outcome.\\
 \end{tabularx}
 
 \subsection{Poisson($\lambda$)}
@@ -295,6 +297,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{cdf} & $\frac{\Gamma(\lfloor k+1\rfloor, \lambda)}{\lfloor k\rfloor !}$ \\
 \emph{mean and variance} & $EX=\lambda$; $Var X =\lambda$ \\
 \emph{mgf} & $M_X(t)=e^{\lambda(e^t-1)}$ \\
+\emph{notes} & Number of events occuring in a time period, $\lambda$: Average rate of occurance, x: number of times in the period.\\
 \end{tabularx}
 
 \subsection{Chi squared(p)}
