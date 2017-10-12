@@ -220,7 +220,9 @@ $E(X)=\mu_X=\sum\limits_{x\in X} xf(x)$;
 $E(X)=\mu_X=\int\limits_{-\infty}^{\infty}xf(x)dx$ \\
 Multivariate:\\
 $E(Y|X=x)=\mu_X=\sum\limits_{x\in X} yf(y|x)$; 
-$E(Y|X=x)=\mu_X=\int\limits_{-\infty}^{\infty}yf(y|x)dx$
+$E(Y|X=x)=\mu_X=\int\limits_{-\infty}^{\infty}yf(y|x)dx$\\
+Property:\\
+$E(X+Y)=E(X)+E(Y)$
 
 \section{Variance}
 Univariate:\\
@@ -228,7 +230,9 @@ $Var(X)=\sigma_X^2=E[(X-\mu)^2]$
 $Var(X)=E(X^2)-[E(X)]^2$ \\
 Multivariate:\\
 $Var(Y|x)=E(Y^2|x)-(E(Y|x))^2$
-$Var(X)=E(Var(X|Y))+Var[E(X|Y)]$
+$Var(X)=E(Var(X|Y))+Var[E(X|Y)]$\\
+Property:\\
+$Var(X+Y)=Var(X)+Var(Y)$
 
 \section{Function of an RV}
 \subsection{Method 1:} Let X be a random variable with pdf $f_X(x)$.\\
