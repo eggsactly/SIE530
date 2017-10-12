@@ -1,16 +1,13 @@
-SOURCES=$(wildcard $(SRC_DIR)*.tex)
-BIBS=$(wildcard $(SRC_DIR)*.bib)
-OUTPUT=$(patsubst %.tex, %.pdf, $(SOURCES))
-
 .PHONY: all
-all: $(OUTPUT) 
+all: General-Notes.pdf formula-sheet.pdf
 
-%.pdf: %.tex $(BIBS)
+General-Notes.pdf: General-Notes.tex course-references.bib
 	pdflatex $(patsubst %.tex, %, $<)
-ifneq ($(BIBS),)
 	bibtex $(patsubst %.tex, %, $<)
 	pdflatex $(patsubst %.tex, %, $<)
-endif
+	pdflatex $(patsubst %.tex, %, $<)
+
+formula-sheet.pdf: formula-sheet.tex
 	pdflatex $(patsubst %.tex, %, $<)
 
 .PHONY: clean

@@ -108,14 +108,14 @@ $(A \cap B)^c=A^c\cup B^c$ \\
 
 \section{Probability Theory}
 
-Central Tendency: sample average/mean \cite[p.14]{classnotes.1}.
+Central Tendency: sample average/mean 
 $$\bar{x}=\frac{\sum\limits_{i=1}^{n} x_i}{n}$$
 
-Scatter/dispersion: \emph{sample variance} or \emph{sample standard deviation} %\cite[p.14]{classnotes.1}.
+Scatter/dispersion: \emph{sample variance} or \emph{sample standard deviation}
 $$\hat{\sigma}^2=S^2=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1};\quad\hat{\sigma}=S=\sqrt{\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}$$
 
 \section{Definition of Probability}
-[P \(\) : \{set of all possible events\} $\rightarrow [0,1]$] %\cite[p.4]{classnotes.2}%
+[P \(\) : \{set of all possible events\} $\rightarrow [0,1]$] 
 \begin{itemize}
 \item Axiom 1: For any event $A, P(A)\geq 0$ (nonnegatove).
 \item Axiom 2: $P(S)=1$
@@ -165,7 +165,7 @@ $\int xe^{ax}dx=\begin{pmatrix}\frac{x}{a}-\frac{1}{a^2}\end{pmatrix}e^{ax}$
 $\int x^2e^{ax}dx=\begin{pmatrix}\frac{x^2}{a}-\frac{2x}{a^2}+\frac{2}{a^3}\end{pmatrix}e^{ax}$
 
 \section{Bayes Theorem}
-Let the events $A_1,A_2,\dots A_k$ be \emph{disjoint} and \emph{exhaustive} events in the sample space $S$, such that $P(A_i)>0$ and let $B$ be an event such that $P(B)>0$, then, %\cite[p.7]{classnotes.3}:
+Let the events $A_1,A_2,\dots A_k$ be \emph{disjoint} and \emph{exhaustive} events in the sample space $S$, such that $P(A_i)>0$ and let $B$ be an event such that $P(B)>0$, then, 
 $$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{j=1}^k P(B|A_i)P(A_j)}$$
 $$P(A_i|B)=\frac{P(A_i \cap B)}{P(B)} = \frac{cond. \quad prob.}{law \quad of \quad total \quad prob.}$$
 $$P(A|B)P(B)=P(B|A)P(A)$$
@@ -174,7 +174,7 @@ Conditional Distribution
 $$f(y|x)=P(Y=y|X=x)=\frac{f_{XY}(x,y)}{f_X(x)}$$
 
 \section{Discrete Random Variables}
-\emph{Probability mass function} (pmf) of a discrete \emph{Random Variable} is given by %\cite[p.11]{classnotes.3}:
+\emph{Probability mass function} (pmf) of a discrete \emph{Random Variable} is given by 
 $$f_X(x)=P(X=x)$$
 and satisfies the following properties
 \begin{enumerate}
@@ -182,7 +182,7 @@ and satisfies the following properties
 \item $\sum\limits_{i=1}^{\infty}f(x_i)=1$
 \end{enumerate}
 
-\emph{Cumulative Distribution Function} (cdf) of a discrete \emph{Random Variable} %\cite[p.13]{classnotes.3}:
+\emph{Cumulative Distribution Function} (cdf) of a discrete \emph{Random Variable} 
 $$F_X(x)=P(X\leq x)=\sum\limits_{i=1}^{x}f_X(i); \quad \forall x$$
 
 Satisfies the following properties
@@ -193,7 +193,7 @@ Satisfies the following properties
 \end{enumerate}
 
 \section{Continuous Random Variables}
-The \emph{probability density function} (pdf) of a continuous \emph{Random Variable} is given by %\cite[p.4]{classnotes.4}:
+The \emph{probability density function} (pdf) of a continuous \emph{Random Variable} is given by 
 $$\int_{x_1}^{x_2}f_X(x)dx=P(x_1\leq X\leq x_2), \quad \forall x_1,x_2$$
 And satisfies the following properties:
 \begin{enumerate}
@@ -201,7 +201,7 @@ And satisfies the following properties:
 \item $\int_{-\infty}^{\infty}f(x)dx=1$
 \end{enumerate}
 
-The \emph{Cumulative Distribution Function}(cdf) for a continuous \emph{Random Variable} is %\cite[p.5]{classnotes.4}:
+The \emph{Cumulative Distribution Function}(cdf) for a continuous \emph{Random Variable} is 
 $$F_X(x)=P(X \leq x) = \int_{-\infty}^{x}f_X(u)du, \quad \forall x$$
 And satisifes the following property:
 \begin{enumerate}
@@ -311,8 +311,6 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{mgf} & $M_X(t)=\frac{e^{bt}-e^{at}}{(b-a)t}$ \\
 \end{tabularx}
 
-% You can even have references
-\rule{0.3\linewidth}{0.25pt}
 \scriptsize
 \bibliographystyle{unsrt} 
 \bibliography{course-references}
