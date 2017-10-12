@@ -273,6 +273,14 @@ Z-statistic:
 $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$$
 
 \section{Common Distributions}
+
+\subsection{HyperGeometric($x$)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & ${{{K \choose k} {{N-K} \choose {n-k}}}\over {N \choose n}}$; \\
+\emph{mean and variance} & $EX=n {K\over N}$; $Var X =n{K\over N}{(N-K)\over N}{N-n\over N-1}$ \\
+\emph{mgf} & $\frac{{N-K \choose n} \scriptstyle{\,_2F_1(-n, -K; N - K - n + 1; e^{t}) } }{{N \choose n}}  \,\!$ \\
+\end{tabularx}
+
 \subsection{Poisson($\lambda$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pmf} & $P(X=x|\lambda)=\frac{e^{-\lambda}\lambda^x}{x!}$; $x=0, 1, \dots$; $0 \leq \lambda <\infty$ \\
