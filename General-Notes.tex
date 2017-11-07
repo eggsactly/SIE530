@@ -190,8 +190,29 @@ We use the notation $\chi_p^2$ to denote a chi squared random variable with p de
 \item If $\chi_1,\dots\chi_n$ are independent and $\chi_i\sim\chi_{p_i}^2$, then $\chi_1+\dots+\chi_n\sim\chi_{p_1+\dots+p_n}^2$; that is, independent chi squared variables add to a chi squared variable, and the degrees of freedom also add.
 \end{enumerate}
 
+\section*{Sufficiency}
+\subsection*{Sufficient Principle \cite[p. 8]{classnotes.14}}
+Theorem: $T(X)$ is a sufficient statistic for $\theta$ if for every $x$ in the same space, the ratio $\frac{p(x|\theta)}{q(T(x)|\theta)}$ is a constant function of $\theta$.
+\begin{enumerate}
+\item $P(x|p)=\prod\limits_{i=1}^nP(X=x)$
+\item Find $q(T(x)|\mu)$
+\item Find $\frac{p(x|\theta)}{q(T(x)|\theta)}$
+\end{enumerate}
+
+\subsection*{Factorization Theorem \cite[p. 4]{classnotes.15}}
+A statistic $T(X)$ is sufficient statistic for $\theta$ if and only if there esists a function $g(T(X)\theta)$ and $h(x)$ sch that, for all sample points $x$ and all parameter point $\theta$, 
+$$f(x|\theta)=g(T(X)|\theta)h(X)$$
+
 \section*{Estimators}
 
+\subsection*{Method of Moment (MoM)}
+$$\begin{cases}
+\frac{1}{n}\sum\limits_{i=1}^{n}X_i = E(X^1_i) & First Moment \\
+\frac{1}{n}\sum\limits_{i=1}^{n}X_i^2 = E(X^2_i) & Second Moment \\
+\vdots \quad \vdots \quad \vdots & \vdots \\
+\frac{1}{n}\sum\limits_{i=1}^{n}X_i^k = E(X^k_i) & k^{th} Moment \\
+\end{cases}$$
+You have n equations and n unknowns, solve for $\mu$, $\sigma$, etc.
 \subsection*{Maximum Likelihood Estimation (MLE)}
 \begin{itemize}
 \item Write down likelihood function \\ $L(\theta|x)=\prod\limits_{i=1}^{n}P_{\theta}(X=x)$
