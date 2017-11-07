@@ -290,6 +290,36 @@ K
 \emph{Notes} & If $a=0$ and $b=1$, this is a special case of the beta $(\alpha = \beta = 1)$.\\
 \end{tabularx}
 
+\section*{Estimators \cite{classnotes.18}}
+
+\subsection*{Evaluating Estimators}
+\subsubsection*{Bias}
+$$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
+
+\begin{itemize}
+\item Measures the \emph{accuracy} of the estimator
+\item An estimator whose bias is zero is called \emph{unbiased}
+\item An unbiased estimator may, nevertheless, fluctuate greatly from sample to sample
+\end{itemize}
+
+\subsubsection*{Var}
+$$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
+
+\begin{itemize}
+\item The lower the vaiance, the more \emph{precise} the estimator.
+\item A low-variance estimator may be biased
+\item Among the unbiased estimators, the one with the lowest variance should be chosen. "Best" - minimum variance
+\end{itemize}
+
+\subsubsection*{Mean Squared Error}
+\begin{itemize}
+\item To choose amoung all estimators (biased and unboased). Minimze a measure that combines both bias and variance.
+\item A "good" estimator should have low bias and (accurate) ANS low vairance (precise).
+\end{itemize}
+$$MSE(\hat{\theta})=E{[\hat{\theta}-\theta]^2}=Var(\hat{\theta})+[Bias(\hat{\theta})]^2$$
+$$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
+$$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
+
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{course-references}
