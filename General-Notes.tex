@@ -187,12 +187,23 @@ And satisifes the following property:
 We use the notation $\chi_p^2$ to denote a chi squared random variable with p degrees of freedom. 
 \begin{enumerate}
 \item If $Z$ is a $n(0, 1)$ \emph{random variable}, then $Z^2\sim\chi_1^2$; that is, the square of a standard normal random variable is a chi squared random variable
-\item If $\chi_1,\dots\chi_n$ are independent and $\chi_i\sim\chi_{p_i}^2$, then $\chi_1+\dots+\chi_n\sim\chi_{p_1+\dots+p_n}^2$; that is, independent chi squared variables add to a chi squared variable, and the degrees of freedom also add. 
+\item If $\chi_1,\dots\chi_n$ are independent and $\chi_i\sim\chi_{p_i}^2$, then $\chi_1+\dots+\chi_n\sim\chi_{p_1+\dots+p_n}^2$; that is, independent chi squared variables add to a chi squared variable, and the degrees of freedom also add.
 \end{enumerate}
 
-\section*{Estimators \cite{classnotes.18}}
+\section*{Estimators}
 
-\subsection*{Evaluating Estimators}
+\subsection*{Maximum Likelihood Estimation (MLE)}
+\begin{itemize}
+\item Write down likelihood function \\ $L(\theta|x)=\prod\limits_{i=1}^{n}P_{\theta}(X=x)$
+\item Solve for theta\\ $\frac{\partial ln(L(\theta|x))}{\partial \theta_i}=0$
+\item Verify the second derivative is less than zero\\ $\frac{\partial^2 ln(L(\theta|x))}{\partial \theta_i^2}<0$
+\end{itemize}
+
+\subsection*{Bayes Estimator}
+$$\pi(\theta|x)=\frac{f(x|\theta)\pi(\theta)}{m(x)}$$
+$$m(x)=\int f(x|\theta)\pi(\theta)d\theta$$
+
+\subsection*{Evaluating Estimators \cite{classnotes.18}}
 \subsubsection*{Bias}
 $$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
 
@@ -213,7 +224,7 @@ $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 
 \subsubsection*{Mean Squared Error}
 \begin{itemize}
-\item To choose amoung all estimators (biased and unboased). Minimze a measure that combines both bias and variance.
+\item To choose among all estimators (biased and unboased). Minimze a measure that combines both bias and variance.
 \item A "good" estimator should have low bias and (accurate) ANS low vairance (precise).
 \end{itemize}
 $$MSE(\hat{\theta})=E{[\hat{\theta}-\theta]^2}=Var(\hat{\theta})+[Bias(\hat{\theta})]^2$$
