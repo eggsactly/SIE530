@@ -1,5 +1,5 @@
 .PHONY: all
-all: General-Notes.pdf formula-sheet.pdf
+all: General-Notes.pdf formula-sheet-1.pdf
 
 General-Notes.pdf: General-Notes.tex course-references.bib
 	pdflatex $(patsubst %.tex, %, $<)
@@ -7,7 +7,7 @@ General-Notes.pdf: General-Notes.tex course-references.bib
 	pdflatex $(patsubst %.tex, %, $<)
 	pdflatex $(patsubst %.tex, %, $<)
 
-formula-sheet.pdf: formula-sheet.tex
+formula-sheet-1.pdf: formula-sheet-1.tex
 	pdflatex $(patsubst %.tex, %, $<)
 
 .PHONY: clean
