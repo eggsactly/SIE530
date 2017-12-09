@@ -1,0 +1,109 @@
+\documentclass[8pt,landscape]{extarticle}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\newcommand\NumCols{3}
+\pdfinfo{
+  /Title (formula-sheet-2.pdf)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Garrett Weaver)
+  /Subject (SIE 530)
+  /Keywords (statistics, engineering, masters, Arizona, Liu)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+
+\begin{document}
+
+\raggedright
+%\footnotesize\usepackage{amsmath}
+\begin{multicols}{\NumCols}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\underline{SIE 530 Formula Sheet 2}} \\
+\end{center}
+
+\section{Snedecor's \emph{F}-Distribution}
+Consider these two distributions \\
+$X_1, \dots X_n \sim N(\mu_X, \sigma_X^2)$ \\
+$Y_1, \dots Y_m \sim N(\mu_Y, \sigma_Y^2)$ \\
+RV $F$ is the ratio of two independent $\chi^2$ variables divided by their respective degree of freedom:
+$$F=(S_X^2/\sigma_X^2)/(S_Y^2/\sigma_Y^2)$$
+has Snedecor's $F$-Distribution with $v_1=n-1$ and $v_2=m-1$ degrees of freedom (i.e. $F \sim F_{v_1,v_2}$)
+
+$$f_F(x|v)=\frac{\Gamma(\frac{v_1+v_2}{2})}{\Gamma(\frac{v_1}{2})\Gamma(\frac{v_2}{2})}
+\begin{pmatrix} \frac{v_1}{v_2} \end{pmatrix}^{\frac{v_1}{2}}
+\frac{x^{\frac{(v_1-2)}{2}}}{\begin{pmatrix}1+\begin{pmatrix}\frac{v_1}{v_2}\end{pmatrix}x\end{pmatrix}^{\frac{(v_1+v_2)}{2}}}$$
+$0\leq\infty, v_1,v_2=1\dots$
+
+\subsection{$F$-Distribution Properties}
+\begin{itemize}
+\item $EX=\frac{v_2}{v_2-2}, v_2 > 2$
+\item $VarX = 2(\frac{v_2}{v_2-2})^2\frac{v_1+v_2-2}{v_1(v_2-4)}, v_2>4$
+\item If $X\sim F_{v_1,v_2}$ then $1/X \sim F_{v_2,v_1}$
+\item If $X \sim t_q$ then $X^2 \sim F_{1,q}$
+\item If $X \sim F{v_1,v_2}$ then \\ $\frac{(v_1/v_2)X}{(1+(v_1/v_2)X)}\sim beta(\frac{v_1}{2},\frac{v_2}{2})$
+\end{itemize}
+
+\scriptsize
+\bibliographystyle{unsrt} 
+\bibliography{course-references}
+\end{multicols}
+\end{document}
+
