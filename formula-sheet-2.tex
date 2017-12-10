@@ -102,6 +102,7 @@ $0\leq\infty, v_1,v_2=1\dots$
 \end{itemize}
 
 \section{Sufficient Statistics}
+Contains all information about the parameters. 
 A statistic $T(X)$ is sufficient for $\theta$ if the conditional distribution of the sample $X$ given the value of $T(X)$ does not depend on $\theta$.
 
 \subsection{Theorem}
@@ -114,6 +115,7 @@ A statistic $T(X)$ is sufficient statistic for $\theta$ \emph{if and only if} th
 $$f(x|\theta)=g(T(x)|\theta) \cdot h(x)$$
 
 \section{Complete Statistic}
+Contains no irrelevant informations about the parameters.
 Let $f(T(x)|\theta)$ be a family of pdfs or pmfs for a statistic $T(X)$. The family of probability distributions is called \emph{complete} if $e_\theta g(T)=0$ for all $\theta$ implies $P_\theta(g(T)=0)=1$ for all $\theta$. Equivalently, $T(X)$ is called a \emph{Complete statistic}.
 
 \section{Likelihood function}
