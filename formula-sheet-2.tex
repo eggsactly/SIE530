@@ -198,8 +198,30 @@ Put in content here, the notes aren't too clear.
 \subsection{Likelihood Ratio Test (LRT)}
 Testing $H_0:\theta \in \Theta_0$ vs $H_1:\theta \in \Theta_0^C$ is 
 $$\lambda(x)=\frac{sup_{\Theta_0} L(\theta|x)}{sup_{\Theta} L(\theta|x)}$$
-Top part is the ratio between 2 maximum likelyhood tests $\Theta=\Theta_0 \cup \Theta_0^C$ Bottom part is the global max. 
+Top part is the ratio between 2 maximum likelihood tests $\Theta=\Theta_0 \cup \Theta_0^C$ Bottom part is the global max. 
 A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\}$ where c is an number satisfying $0 \leq c \leq 1$.
+
+\subsection{Inference on MEAN of normal with Variance Known}
+Use Z test
+$$\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \sim N(0,1); \quad \bar{x}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x} + Z_{\alpha/2}\frac{\sigma}{\sqrt{2}}$$
+\begin{tabular}{| c | c | c |}
+\hline
+$H_0:\mu=\mu_0$ & $H_1$ & \\ 
+Reject $H_0$: & $\mu \neq \mu_0$ & if $\begin{vmatrix} \frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \end{vmatrix} > Z(\alpha / 2)$  \\ \hline
+Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} < -Z(\alpha)$  \\ \hline
+Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} > Z(\alpha)$  \\ \hline
+\end {tabular}
+
+\subsection{Inference on MEAN of normal with Variance Unknown}
+Use t test
+$$\frac{\bar{x}-\mu}{s / \sqrt{n}} \sim t_{(n-1)}; \quad \bar{x}-t_{\alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq \bar{x} + t_{\alpha/2}\frac{s}{\sqrt{n}}$$
+\begin{tabular}{| c | c | c |}
+\hline
+$H_0:\mu=\mu_0$ & $H_1$ & \\ 
+Reject $H_0$: & $\mu \neq \mu_0$ & if $\begin{vmatrix} \frac{\bar{x}-\mu_0}{s / \sqrt{n}} \end{vmatrix} > t(\alpha / 2, n-1)$  \\ \hline
+Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} < -t(\alpha, n-1)$  \\ \hline
+Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} > t(\alpha, n-1)$  \\ \hline
+\end {tabular}
 
 \scriptsize
 \bibliographystyle{unsrt} 
