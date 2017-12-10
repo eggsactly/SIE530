@@ -185,6 +185,22 @@ $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 \subsection*{Uniform Minimum Variance Unbiased Estimator (UMVUE)}
 An estimator $W*$ is a \emph{best unbiased} estimator of $\tau(\theta)$ if it statisfies $E_\theta W* = \tau(\theta), \forall \theta$ and for any other estimator $W$ with $E_\theta W = \tau(\theta)$ we have $Var_\theta W* \leq Var_\theta W$
 
+\subsection*{Relating Sufficiency Stats to Unbiased Est.}
+Given X and Y as RVs and the expectations exist, then
+$$E(X)=E[E(X|Y)]$$
+$$Var(X) = Var[E(X|Y)]+E[Var(X|Y)]$$
+
+\subsection*{Rao-Blackwell theorem}
+Put in content here, the notes aren't too clear.
+
+\section{Hypothesis Testing}
+
+\subsection{Likelihood Ratio Test (LRT)}
+Testing $H_0:\theta \in \Theta_0$ vs $H_1:\theta \in \Theta_0^C$ is 
+$$\lambda(x)=\frac{sup_{\Theta_0} L(\theta|x)}{sup_{\Theta} L(\theta|x)}$$
+Top part is the ratio between 2 maximum likelyhood tests $\Theta=\Theta_0 \cup \Theta_0^C$ Bottom part is the global max. 
+A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\}$ where c is an number satisfying $0 \leq c \leq 1$.
+
 \scriptsize
 \bibliographystyle{unsrt} 
 \bibliography{course-references}
