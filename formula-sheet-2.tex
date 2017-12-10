@@ -79,7 +79,7 @@
      \Large{\underline{SIE 530 Formula Sheet 2}} \\
 \end{center}
 
-\section{Snedecor's \emph{F}-Distribution}
+\section*{Snedecor's \emph{F}-Distribution}
 Consider these two distributions \\
 $X_1, \dots X_n \sim N(\mu_X, \sigma_X^2)$ \\
 $Y_1, \dots Y_m \sim N(\mu_Y, \sigma_Y^2)$ \\
@@ -92,7 +92,7 @@ $$f_F(x|v)=\frac{\Gamma(\frac{v_1+v_2}{2})}{\Gamma(\frac{v_1}{2})\Gamma(\frac{v_
 \frac{x^{\frac{(v_1-2)}{2}}}{\begin{pmatrix}1+\begin{pmatrix}\frac{v_1}{v_2}\end{pmatrix}x\end{pmatrix}^{\frac{(v_1+v_2)}{2}}}$$
 $0\leq\infty, v_1,v_2=1\dots$
 
-\subsection{$F$-Distribution Properties}
+\subsection*{$F$-Distribution Properties}
 \begin{itemize}
 \item $EX=\frac{v_2}{v_2-2}, v_2 > 2$
 \item $VarX = 2(\frac{v_2}{v_2-2})^2\frac{v_1+v_2-2}{v_1(v_2-4)}, v_2>4$
@@ -101,11 +101,11 @@ $0\leq\infty, v_1,v_2=1\dots$
 \item If $X \sim F{v_1,v_2}$ then \\ $\frac{(v_1/v_2)X}{(1+(v_1/v_2)X)}\sim beta(\frac{v_1}{2},\frac{v_2}{2})$
 \end{itemize}
 
-\section{Sufficient Statistics}
+\section*{Sufficient Statistics}
 Contains all information about the parameters. 
 A statistic $T(X)$ is sufficient for $\theta$ if the conditional distribution of the sample $X$ given the value of $T(X)$ does not depend on $\theta$.
 
-\subsection{Theorem}
+\subsection*{Theorem}
 If $p(x|\theta)$ is the joint pdf or pmf of $X$ and $q(T(x)|\theta)$ is the pdf or pmf of $T(X)$ then $T(X)$ is a sufficient statistic of $\theta$ if, for every $x$ in the sample space the ratio
 $$\frac{p(x|\theta)}{q(T(x)|\theta)}$$
 is constant as a function of $\theta$.
@@ -115,20 +115,20 @@ is constant as a function of $\theta$.
 \item Find $\frac{p(x|\theta)}{q(T(x)|\theta)}$
 \end{enumerate}
 
-\subsection{Factorization Theorem}
+\subsection*{Factorization Theorem}
 A statistic $T(X)$ is sufficient statistic for $\theta$ \emph{if and only if} there exist function $g(T(x)|\theta)$ and $h(x)$ such that, for all sample points $x$ and all parameter point $\theta$,
 $$f(x|\theta)=g(T(x)|\theta) \cdot h(x)$$
 
-\section{Complete Statistic}
+\section*{Complete Statistic}
 Contains no irrelevant informations about the parameters.
 Let $f(T(x)|\theta)$ be a family of pdfs or pmfs for a statistic $T(X)$. The family of probability distributions is called \emph{complete} if $e_\theta g(T)=0$ for all $\theta$ implies $P_\theta(g(T)=0)=1$ for all $\theta$. Equivalently, $T(X)$ is called a \emph{Complete statistic}.
 
-\section{Likelihood function}
+\section*{Likelihood function}
 $f(x|\theta) \sim X = (X_1 \dots X_2)$ If $X=x$ is observed, the function of $\theta$ defined by
 $$L(\theta|x)=f(x|\theta)$$
 is a likelihood function. 
 
-\subsection{Likelihood principle}
+\subsection*{Likelihood principle}
 Given points $x$ and $y$ $\exists C(x,y)$ where C is a constant such that
 $$L(\theta|x)=C(x,y)L(\theta|y), \forall \theta$$
 
@@ -180,6 +180,8 @@ $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 $$MSE(\hat{\theta})=E{[\hat{\theta}-\theta]^2}=Var(\hat{\theta})+[Bias(\hat{\theta})]^2$$
 $$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
 $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
+
+
 
 
 \scriptsize
