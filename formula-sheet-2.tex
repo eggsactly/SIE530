@@ -116,7 +116,14 @@ $$f(x|\theta)=g(T(x)|\theta) \cdot h(x)$$
 \section{Complete Statistic}
 Let $f(T(x)|\theta)$ be a family of pdfs or pmfs for a statistic $T(X)$. The family of probability distributions is called \emph{complete} if $e_\theta g(T)=0$ for all $\theta$ implies $P_\theta(g(T)=0)=1$ for all $\theta$. Equivalently, $T(X)$ is called a \emph{Complete statistic}.
 
+\section{Likelihood function}
+$f(x|\theta) \sim X = (X_1 \dots X_2)$ If $X=x$ is observed, the function of $\theta$ defined by
+$$L(\theta|x)=f(x|\theta)$$
+is a likelihood function. 
 
+\subsection{Likelihood principle}
+Given points $x$ and $y$ $\exists C(x,y)$ where C is a constant such that
+$$L(\theta|x)=C(x,y)L(\theta|y), \forall \theta$$
 
 \scriptsize
 \bibliographystyle{unsrt} 
