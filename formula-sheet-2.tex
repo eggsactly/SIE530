@@ -191,7 +191,10 @@ $$E(X)=E[E(X|Y)]$$
 $$Var(X) = Var[E(X|Y)]+E[Var(X|Y)]$$
 
 \subsection*{Rao-Blackwell theorem}
-Put in content here, the notes aren't too clear.
+$sum_{k=0}^\infty h(x) *g(x)$ where $g(x)$ is the distribution and $h(x)$ is some function. 
+If you show that the function is zero only when $h(x)$ is zero then it passes the RB theorem. 
+
+If you have complete, sufficient and unbiased and if the distribution passes this theorem then it is a UMVUE. 
 
 \section{Hypothesis Testing}
 
@@ -222,6 +225,25 @@ Reject $H_0$: & $\mu \neq \mu_0$ & if $\begin{vmatrix} \frac{\bar{x}-\mu_0}{s / 
 Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} < -t(\alpha, n-1)$  \\ \hline
 Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} > t(\alpha, n-1)$  \\ \hline
 \end {tabular}
+
+\subsection{Significance Testing}
+Significance is the area underneath the normal curve up to a certain point on the x axis. When testing for significance you want to find the point on the x axis, ($Z$), which equals the value of the significance from the standard normal CDF. When this $Z$ value is found then it can be compared with a calculated sigma calculation: $\sigma = \sqrt{npq}$ where $n$ is the sample size, $p$ is the claimed probability $q = 1-p$. 
+
+
+Remember\\
+$E(\bar{x})=\mu$\\
+$Var(\bar{x})=\frac{\sigma^2}{n}$\\
+$E(S^2)=\sigma^2$\\
+$Var(S^2)=\frac{2 \sigma^4}{n-1}$\\
+$\sigma^2 = \frac{1}{n} \sum (x_i-\bar{x})^2 = \frac{(n-1)s^2}{n}$\\
+
+Remeber, when sampling with the distribution on the left you get the distribution on the right\\
+Normal -> Normal\\
+Bernolli -> Binomial\\
+Exponential -> Gamma\\
+
+% Add in the point estimation slide 115 from lecture 15 
+% Normal, Gamma, Binomial, Poisson 
 
 \scriptsize
 \bibliographystyle{unsrt} 
