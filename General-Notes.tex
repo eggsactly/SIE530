@@ -289,6 +289,14 @@ A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\
 \hline
 \end{tabular}
 
+\subsubsection*{Power Function}
+Suppose $R$ denotes the rejection region for a test. For $\theta \in \Theta_0$ the test will make a mistake if $x \in R$. The probability of a Type I Error is $P_\theta(X\in R)$. The probability of a Type II Error is $P_\theta(X\in R^C)$. $P_\theta(X\in R) = 1-P_\theta(X\in R)$. We have:
+$$P_\theta(X\in R)=\begin{cases}
+Prob\quad Type\quad I \quad Error & \theta \in \Theta_0 \\
+1-  Prob\quad Type\quad II \quad Error & \theta \in \Theta_0^C \\
+\end{cases}$$
+The \emph{Power Function} of a hypothesis test with rejection region $R$ is the function of $\theta$ defined by $\beta(\theta)=P_\theta(X\in R)$ \cite[p. 383]{StatisticalInference}.
+
 \subsection*{Inference on MEAN of normal with Variance Known}
 Use Z test
 $$\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \sim N(0,1); \quad \bar{x}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x} + Z_{\alpha/2}\frac{\sigma}{\sqrt{2}}$$
