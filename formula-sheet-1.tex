@@ -297,6 +297,17 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{notes} & N: sample size, n: selected items w/o replacement, D: items of interest in the population, x: number of points of interest in n with property D.
 \end{tabularx}
 
+\subsection{Bernoulli($x$)}
+\begin{tabularx}{\textwidth/\NumCols}{ l X }
+\emph{pmf} & $\textstyle p^x (1-p)^{1-x}$; \\
+\emph{cdf} & $ \begin{cases}
+    0 & \text{for }x<0 \\ 1 - p & \text{for }0\leq x<1 \\ 1 & \text{for }x\geq 1
+    \end{cases}$ \\
+\emph{mean and variance} & $EX=p$; $Var X =p(1-p)$ \\
+\emph{mgf} & $1-p + pe^t \!$ \\
+\emph{notes} & Special case of the Binomial distribution where only a single experiment is done.\\
+\end{tabularx}
+
 \subsection{Binomial($x$)}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pmf} & $\textstyle {n \choose x}\, p^x (1-p)^{n-x}$; \\
