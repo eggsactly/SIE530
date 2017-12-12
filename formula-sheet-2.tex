@@ -198,9 +198,9 @@ If you show that the function is zero only when $h(x)$ is zero then it passes th
 
 If you have complete, sufficient and unbiased and if the distribution passes this theorem then it is a UMVUE. 
 
-\section{Hypothesis Testing}
+\section*{Hypothesis Testing}
 
-\subsection{Likelihood Ratio Test (LRT)}
+\subsection*{Likelihood Ratio Test (LRT)}
 Testing $H_0:\theta \in \Theta_0$ vs $H_1:\theta \in \Theta_0^C$ is 
 $$\lambda(x)=\frac{sup_{\Theta_0} L(\theta|x)}{sup_{\Theta} L(\theta|x)}$$
 Top part is the ratio between 2 maximum likelihood tests $\Theta=\Theta_0 \cup \Theta_0^C$ Bottom part is the global max. 
@@ -219,7 +219,9 @@ A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\
 \hline
 \end{tabular}
 
-\subsection{Inference on MEAN of normal with Variance Known}
+
+
+\subsection*{Inference on MEAN of normal with Variance Known}
 Use Z test
 $$\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \sim N(0,1); \quad \bar{x}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x} + Z_{\alpha/2}\frac{\sigma}{\sqrt{2}}$$
 \begin{tabular}{| c | c | c |}
@@ -230,7 +232,7 @@ Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} < -Z
 Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} > Z(\alpha)$  \\ \hline
 \end {tabular}
 
-\subsection{Inference on MEAN of normal with Variance Unknown}
+\subsection*{Inference on MEAN of normal with Variance Unknown}
 Use t test
 $$\frac{\bar{x}-\mu}{s / \sqrt{n}} \sim t_{(n-1)}; \quad \bar{x}-t_{\alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq \bar{x} + t_{\alpha/2}\frac{s}{\sqrt{n}}$$
 \begin{tabular}{| c | c | c |}
@@ -241,7 +243,7 @@ Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} < -t(\alp
 Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} > t(\alpha, n-1)$  \\ \hline
 \end {tabular}
 
-\subsection{Significance Testing}
+\subsection*{Significance Testing}
 Significance is the area underneath the normal curve up to a certain point on the x axis. When testing for significance you want to find the point on the x axis, ($Z$), which equals the value of the significance from the standard normal CDF. When this $Z$ value is found then it can be compared with a calculated sigma calculation: $\sigma = \sqrt{npq}$ where $n$ is the sample size, $p$ is the claimed probability $q = 1-p$. 
 
 
