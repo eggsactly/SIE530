@@ -289,15 +289,15 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 
 \section{Common Distributions}
 
-\subsection{HyperGeometric($x$)}
+\subsection{$HyperGeometric(N,M,K)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
-\emph{pmf} & ${{{K \choose k} {{N-K} \choose {n-k}}}\over {N \choose n}}$; \\
+\emph{pmf} & ${{{K \choose x} {{N-K} \choose {n-x}}}\over {N \choose n}}$; \\
 \emph{mean and variance} & $EX=n {K\over N}$; $Var X =n{K\over N}{(N-K)\over N}{N-n\over N-1}$ \\
 \emph{mgf} & $\frac{{N-K \choose n} \scriptstyle{\,_2F_1(-n, -K; N - K - n + 1; e^{t}) } }{{N \choose n}}  \,\!$ \\
 \emph{notes} & N: sample size, n: selected items w/o replacement, D: items of interest in the population, x: number of points of interest in n with property D.
 \end{tabularx}
 
-\subsection{Bernoulli($x$)}
+\subsection{$Bernoulli(p)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pmf} & $\textstyle p^x (1-p)^{1-x}$; \\
 \emph{cdf} & $ \begin{cases}
@@ -308,7 +308,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{notes} & Special case of the Binomial distribution where only a single experiment is done.\\
 \end{tabularx}
 
-\subsection{Binomial($x$)}
+\subsection{$Binomial(n,p)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pmf} & $\textstyle {n \choose x}\, p^x (1-p)^{n-x}$; \\
 \emph{cdf} & $\textstyle I_{1-p}(n - x, 1 + x)$ \\
@@ -317,7 +317,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{notes} & Probablity for two mutually exclusive outcomes. p: probability of desired outcome, n: sample size, x: number of items with outcome.\\
 \end{tabularx}
 
-\subsection{Poisson($\lambda$)}
+\subsection{$Poisson(\lambda)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pmf} & $P(X=x|\lambda)=\frac{e^{-\lambda}\lambda^x}{x!}$; $x=0, 1, \dots$; $0 \leq \lambda <\infty$ \\
 \emph{cdf} & $\frac{\Gamma(\lfloor k+1\rfloor, \lambda)}{\lfloor k\rfloor !}$ \\
@@ -326,7 +326,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{notes} & Number of events occuring in a time period, $\lambda$: Average rate of occurance, x: number of times in the period.\\
 \end{tabularx}
 
-\subsection{Chi squared(p)}
+\subsection{$Chi-squared(p)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pdf} & $f(x|p)=\frac{1}{\Gamma(p/2)2^{p/2}}x^{(p/2)-1}e^{-x/2}$; $0 \leq x < \infty$; $p=1, 2, \dots$ \\
 \emph{cdf} & $\frac{1}{\Gamma\left(\frac{k}{2} \right)} \; \gamma\left(\frac{k}{2},\,\frac{x}{2}\right)$ \\
@@ -334,7 +334,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{mgf} & $M_X(t)=\begin{pmatrix} \frac{1}{1-2t} \end{pmatrix}^{p/2}, \quad t < \frac{1}{2}$ \\
 \end{tabularx}
 
-\subsection{Exponential($\beta$)}
+\subsection{$Exponential(\beta)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pdf} & $f(x|p)=\frac{1}{\beta}e^{-x/\beta}$; $0 \leq x < \infty$; $\beta>0$ \\
 \emph{cdf} & $1-e^{-\lambda x}$ \\
@@ -342,7 +342,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{mgf} & $M_X(t)= \frac{1}{1-\beta t}, \quad t < \frac{1}{\beta}$ \\
 \end{tabularx}
 
-\subsection{Gamma($x|\alpha, \beta$)}
+\subsection{$Gamma(\alpha, \beta)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pdf} & $f(x|\alpha, \beta)=\frac{1}{\Gamma(\alpha)\beta^{\alpha}} x^{\alpha - 1}e^{-x/\beta};$ $0 \leq x < \infty$; $\alpha\beta>0$ \\
 \emph{cdf} & $\frac{1}{\Gamma(k)} \gamma\left(k,\, \frac{x}{\theta}\right)$ \\
@@ -350,7 +350,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{mgf} & $M_X(t)= \begin{pmatrix}\frac{1}{1-\beta t}\end{pmatrix}^{\alpha}, \quad t < \frac{1}{\beta}$ \\
 \end{tabularx}
 
-\subsection{Normal($\mu, \sigma^2$)}
+\subsection{$Normal(\mu, \sigma^2)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pdf} & $f(x|\mu, \sigma^2)=\frac{1}{\sqrt{2\pi \sigma}}e^{-(x-\mu)^2/(2\sigma^2)}$; $-\infty < x < \infty$; $-\infty < \mu < \infty$ \\
 \emph{cdf} & $\tfrac12\left[1 + \operatorname{erf}\left( \frac{x-\mu}{\sigma\sqrt{2}}\right)\right]$\\
@@ -358,7 +358,7 @@ $$T=\frac{\bar{X}-\mu}{S/\sqrt{n}}; \quad Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\
 \emph{mgf} & $M_X(t)= e^{\mu t + \sigma^2t^2/2}$ \\
 \end{tabularx}
 
-\subsection{Uniform($a, b$)}
+\subsection{$Uniform(a, b)$}
 \begin{tabularx}{\textwidth/\NumCols}{ l X }
 \emph{pdf} & $f(x|a, b)=\frac{1}{b-a}$, $a \leq x \leq b$ \\
 \emph{cdf} & $\begin{cases}
