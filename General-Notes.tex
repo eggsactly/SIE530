@@ -203,6 +203,21 @@ Theorem: $T(X)$ is a sufficient statistic for $\theta$ if for every $x$ in the s
 A statistic $T(X)$ is sufficient statistic for $\theta$ if and only if there esists a function $g(T(X)\theta)$ and $h(x)$ sch that, for all sample points $x$ and all parameter point $\theta$, 
 $$f(x|\theta)=g(T(X)|\theta)h(X)$$
 
+\section*{Complete Statistic}
+Contains no irrelevant information about the parameters.
+Let $f(T(x)|\theta)$ be a family of pdfs or pmfs for a statistic $T(X)$. The family of probability distributions is called \emph{complete} if $e_\theta g(T)=0$ for all $\theta$ implies $P_\theta(g(T)=0)=1$ for all $\theta$. Equivalently, $T(X)$ is called a \emph{Complete statistic}.
+
+\section*{Likelihood function}
+$f(x|\theta) \sim X = (X_1 \dots X_2)$ If $X=x$ is observed, the function of $\theta$ defined by
+$$L(\theta|x)=f(x|\theta)$$
+is a likelihood function. 
+
+\subsection*{Likelihood principle}
+Given points $x$ and $y$ $\exists C(x,y)$ where C is a constant such that
+$$L(\theta|x)=C(x,y)L(\theta|y), \forall \theta$$
+The likelihood principle says that if two sample points have proportional liklihoods then they contain equivalent information about $\theta$ \cite[p. 291]{StatisticalInference}. 
+
+
 \section*{Estimators}
 
 \subsection*{Method of Moment (MoM)}
@@ -238,7 +253,7 @@ $$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
 $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 
 \begin{itemize}
-\item The lower the vaiance, the more \emph{precise} the estimator.
+\item The lower the variance, the more \emph{precise} the estimator.
 \item A low-variance estimator may be biased
 \item Among the unbiased estimators, the one with the lowest variance should be chosen. "Best" - minimum variance
 \end{itemize}
@@ -246,13 +261,42 @@ $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 \subsubsection*{Mean Squared Error}
 \begin{itemize}
 \item To choose among all estimators (biased and unboased). Minimze a measure that combines both bias and variance.
-\item A "good" estimator should have low bias and (accurate) ANS low vairance (precise).
+\item A "good" estimator should have low bias and (accurate) AND low vairance (precise).
 \end{itemize}
 $$MSE(\hat{\theta})=E{[\hat{\theta}-\theta]^2}=Var(\hat{\theta})+[Bias(\hat{\theta})]^2$$
 $$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
 $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 
 
+\section*{Hypothesis Testing}
+
+\subsection*{Likelihood Ratio Test (LRT)}
+Testing $H_0:\theta \in \Theta_0$ vs $H_1:\theta \in \Theta_0^C$ is 
+$$\lambda(x)=\frac{sup_{\Theta_0} L(\theta|x)}{sup_{\Theta} L(\theta|x)}$$
+Top part is the ratio between 2 maximum likelihood tests $\Theta=\Theta_0 \cup \Theta_0^C$ Bottom part is the global max. 
+A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\}$ where c is an number satisfying $0 \leq c \leq 1$.
+
+\subsection*{Inference on MEAN of normal with Variance Known}
+Use Z test
+$$\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \sim N(0,1); \quad \bar{x}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x} + Z_{\alpha/2}\frac{\sigma}{\sqrt{2}}$$
+\begin{tabular}{| c | c | c |}
+\hline
+$H_0:\mu=\mu_0$ & $H_1$ & \\ 
+Reject $H_0$: & $\mu \neq \mu_0$ & if $\begin{vmatrix} \frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \end{vmatrix} > Z(\alpha / 2)$  \\ \hline
+Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} < -Z(\alpha)$  \\ \hline
+Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} > Z(\alpha)$  \\ \hline
+\end {tabular}
+
+\subsection*{Inference on MEAN of normal with Variance Unknown}
+Use t test
+$$\frac{\bar{x}-\mu}{s / \sqrt{n}} \sim t_{(n-1)}; \quad \bar{x}-t_{\alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq \bar{x} + t_{\alpha/2}\frac{s}{\sqrt{n}}$$
+\begin{tabular}{| c | c | c |}
+\hline
+$H_0:\mu=\mu_0$ & $H_1$ & \\ 
+Reject $H_0$: & $\mu \neq \mu_0$ & if $\begin{vmatrix} \frac{\bar{x}-\mu_0}{s / \sqrt{n}} \end{vmatrix} > t(\alpha / 2, n-1)$  \\ \hline
+Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} < -t(\alpha, n-1)$  \\ \hline
+Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} > t(\alpha, n-1)$  \\ \hline
+\end {tabular}
 
 
 
@@ -263,6 +307,7 @@ $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 
 \newpage
 \section*{Table of Common Distributions}
+
 \subsection*{Discrete Distributions}
 \subsubsection*{Bernoulli(p) \cite[p. 621]{StatisticalInference}}
 \begin{tabularx}{\textwidth}{ l X }
@@ -270,7 +315,7 @@ $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 \emph{mean} & $EX=p$ \\
 \emph{variance} & $Var X =p(1-p)$ \\
 \emph{mgf} & $M_X(t)=(1-p)+pe^t$ \\
-\emph{Notes} & None\\
+\emph{Notes} & Special case of the Binomial distribution where only a single experiment is done.\\
 \end{tabularx}
 
 \subsubsection*{Binomial(n, p) \cite[p. 621]{StatisticalInference}}
