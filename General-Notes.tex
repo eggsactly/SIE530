@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \usepackage{accents}
 \usepackage[hidelinks]{hyperref}
-\usepackage{tabularx} % in the preamble
+\usepackage{multirow, tabularx} % in the preamble
 
 \newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
 
@@ -275,6 +275,19 @@ Testing $H_0:\theta \in \Theta_0$ vs $H_1:\theta \in \Theta_0^C$ is
 $$\lambda(x)=\frac{sup_{\Theta_0} L(\theta|x)}{sup_{\Theta} L(\theta|x)}$$
 Top part is the ratio between 2 maximum likelihood tests $\Theta=\Theta_0 \cup \Theta_0^C$ Bottom part is the global max. 
 A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\}$ where c is an number satisfying $0 \leq c \leq 1$.
+
+\subsection*{Methods of Evaluating Tests}
+\begin{tabular}{ c  c | c | c }
+\hline
+\multirow{2}{*}{} &  & \multicolumn{2}{c}{Decision} \\
+
+             &       &Accept $H_0$ & Reject $H_0$\\
+\hline
+      \multirow{2}{*}{Truth} &$H_0$            & Correct decision     & Type I Error\\
+\cline{3-4}
+ & $H_1$           &   Type II Error   & Correct decision\\
+\hline
+\end{tabular}
 
 \subsection*{Inference on MEAN of normal with Variance Known}
 Use Z test
