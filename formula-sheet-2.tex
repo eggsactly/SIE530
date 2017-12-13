@@ -134,6 +134,16 @@ Given points $x$ and $y$ $\exists C(x,y)$ where C is a constant such that
 $$L(\theta|x)=C(x,y)L(\theta|y), \forall \theta$$
 The likelihood principle says that if two sample points have proportional liklihoods then they contain equivalent information about $\theta$.
 
+\subsection*{Point Estimation Method}
+\begin{tabularx}{\textwidth/\NumCols}{| c | c | X |}
+\hline
+\textbf{Distribution} & \textbf{Parameters} & \textbf{Estimator} \\ \hline
+\multirow{2}{*}{Normal} & $\mu$ & $\hat{\mu} = \bar{X} $ \\ \cline{2-3}
+ & $\sigma^2$ & $\hat{\sigma}^2=S^2$ \\ \hline
+Binomial & $p$ & $\hat{p}=\frac{1}{n}\sum_{i=1}^{n}X_i=\bar{X}, \{x_i\}$ are either 1 or 0, corresponding to the "success" and "failure" of the ith Bernoulli trial, respectively. \\ \hline
+Poisson & $\lambda$ & $\hat{\lambda}=\frac{1}{n}\sum_{i=1}^{n}X_i = \bar{X}$ \\ \hline
+\end{tabularx}
+
 \section*{Estimators}
 
 \subsection*{Method of Moment (MoM)}
@@ -268,9 +278,6 @@ Normal & $\rightarrow$ & Normal\\ \hline
 Bernolli & $\rightarrow$ &  Binomial\\ \hline
 Exponential & $\rightarrow$ & Gamma\\ \hline
 \end{tabular}
-
-% Add in the point estimation slide 115 from lecture 15 
-% Normal, Gamma, Binomial, Poisson 
 
 \scriptsize
 \bibliographystyle{unsrt} 
