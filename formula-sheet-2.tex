@@ -218,7 +218,7 @@ $$\lambda(x)=\frac{sup_{\Theta_0} L(\theta|x)}{sup_{\Theta} L(\theta|x)}$$
 Top part is the ratio between 2 maximum likelihood tests $\Theta=\Theta_0 \cup \Theta_0^C$ Bottom part is the global max. 
 A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\}$ where c is an number satisfying $0 \leq c \leq 1$.
 
-\subsection*{Methods of Evaluating Tests}
+\subsection*{Neyman-Pearson Lemma}
 \begin{tabular}{ c  c | c | c }
 \hline
 \multirow{2}{*}{} &  & \multicolumn{2}{c}{Decision} \\
@@ -237,6 +237,7 @@ A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\
 \item $\pi$ = $1-\beta$ = P\{Reject $H_0$ | $H_1$\} is prob. of detection or power of the test
 \end{itemize}
 
+\subsection*{Methods of Evaluating Tests}
 \subsubsection*{Power Function}
 Suppose $R$ denotes the rejection region for a test. For $\theta \in \Theta_0$ the test will make a mistake if $x \in R$. The probability of a Type I Error is $P_\theta(X\in R)$. The probability of a Type II Error is $P_\theta(X\in R^C)$. $P_\theta(X\in R) = 1-P_\theta(X\in R)$. We have:
 $$P_\theta(X\in R)=\begin{cases}
