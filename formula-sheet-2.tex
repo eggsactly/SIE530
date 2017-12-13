@@ -79,7 +79,7 @@
 \setlength{\columnsep}{2pt}
 
 \begin{center}
-     \Large{\underline{SIE 530 Formula Sheet 2 - Fall 2017}} \\
+     \Large{\underline{SIE 530 Formula Sheet 2 - Fall 2017f}} \\
 \end{center}
 
 \begin{alltt}
@@ -170,7 +170,9 @@ You have n equations and n unknowns, solve for $\mu$, $\sigma$, etc.
 \subsection*{Bayes Estimator}
 $$\pi(\theta|x)=\frac{f(x|\theta)\pi(\theta)}{m(x)}$$
 $$m(x)=\int f(x|\theta)\pi(\theta)d\theta$$
-
+Example: Calculate the Posterior Distribution (i.e. the Bayes estimator) of $\lambda$. $X_1\dots X_n$ iid on Poisson, $\lambda \sim Gamma(\alpha, \beta)$.
+$m(y) = \int_0^\infty f(y|\lambda)\pi(\lambda)d\lambda$ = $\int_0^\infty poisson(y|\lambda)Gamma(\lambda|\alpha,\beta)d\lambda$ = $\int_0^\infty\frac{e^{-n\lambda}(n\lambda)}{y!}\frac{1}{\Gamma{\alpha}\beta^\alpha}\lambda^{\alpha-1}e^{-\lambda/\beta}$=$\frac{n^y}{y!\Gamma(\alpha)\beta^\alpha}\Gamma(y+\alpha)(\frac{\beta}{n\beta+1})^{y+\alpha}$
+$\pi(\lambda|y)=\frac{\lambda^{(y+\alpha)-1}e^{-\frac{\lambda}{\beta/(n\beta+1)}}}{\Gamma(y+\alpha)(\frac{\beta}{n\beta+1})^{y+\alpha}} \sim Gamma(y+\alpha, \frac{\beta}{n\beta+1})$
 \subsection*{Evaluating Estimators}
 \subsubsection*{Bias}
 $$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
