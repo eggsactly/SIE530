@@ -128,7 +128,10 @@ $$f(x|\theta)=g(T(x)|\theta) \cdot h(x)$$
 
 \section*{Complete Statistic}
 Contains no irrelevant information about the parameters.
-Let $f(T(x)|\theta)$ be a family of pdfs or pmfs for a statistic $T(X)$. The family of probability distributions is called \emph{complete} if $e_\theta g(T)=0$ for all $\theta$ implies $P_\theta(g(T)=0)=1$ for all $\theta$. Equivalently, $T(X)$ is called a \emph{Complete statistic}.
+Let $f(T(x)|\theta)$ be a family of pdfs or pmfs for a statistic $T(X)$. The family of probability distributions is called \emph{complete} if $e_\theta g(T)=0$ for all $\theta$ implies $P_\theta(g(T)=0)=1$ for all $\theta$. Equivalently, $T(X)$ is called a \emph{Complete statistic}.\\
+\textbf{Example 15.2}: Consider the statistic $T(X)-\sum X_i$ where $X_1\dots X_i\sim Bernoulli(p)$ Is it complete? We apply the definition. 
+$E g(t)=\sum_{t=0}^n g(t) {n \choose t}p^t(1-p)^{n-t}$ = $(1-p)^n \sum_{t=0}^n g(t) {n \choose t} (\frac{p}{1-p})^t=0$
+If $E g(t) = 0$ when $g(t)=0$ then $T(X)$ is a complete statistic. We end up with $\sum (g(t)) {n \choose t} (\frac{p}{1-p})^t=0$ This is a polynomial, so as $g(t)$ goes to zero, so does the entire function. It is Complete.
 
 \section*{Likelihood function}
 $f(x|\theta) \sim X = (X_1 \dots X_2)$ If $X=x$ is observed, the function of $\theta$ defined by
@@ -170,7 +173,7 @@ You have n equations and n unknowns, solve for $\mu$, $\sigma$, etc.
 \subsection*{Bayes Estimator}
 $$\pi(\theta|x)=\frac{f(x|\theta)\pi(\theta)}{m(x)}$$
 $$m(x)=\int f(x|\theta)\pi(\theta)d\theta$$
-Example: Calculate the Posterior Distribution (i.e. the Bayes estimator) of $\lambda$. $X_1\dots X_n$ iid on Poisson, $\lambda \sim Gamma(\alpha, \beta)$.
+\textbf{Example}: Calculate the Posterior Distribution (i.e. the Bayes estimator) of $\lambda$. $X_1\dots X_n$ iid on Poisson, $\lambda \sim Gamma(\alpha, \beta)$.
 $m(y) = \int_0^\infty f(y|\lambda)\pi(\lambda)d\lambda$ = $\int_0^\infty poisson(y|\lambda)Gamma(\lambda|\alpha,\beta)d\lambda$ = $\int_0^\infty\frac{e^{-n\lambda}(n\lambda)}{y!}\frac{1}{\Gamma{\alpha}\beta^\alpha}\lambda^{\alpha-1}e^{-\lambda/\beta}$=$\frac{n^y}{y!\Gamma(\alpha)\beta^\alpha}\Gamma(y+\alpha)(\frac{\beta}{n\beta+1})^{y+\alpha}$
 $\pi(\lambda|y)=\frac{\lambda^{(y+\alpha)-1}e^{-\frac{\lambda}{\beta/(n\beta+1)}}}{\Gamma(y+\alpha)(\frac{\beta}{n\beta+1})^{y+\alpha}} \sim Gamma(y+\alpha, \frac{\beta}{n\beta+1})$
 \subsection*{Evaluating Estimators}
@@ -200,7 +203,7 @@ $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 $$MSE(\hat{\theta})=E{[\hat{\theta}-\theta]^2}=Var(\hat{\theta})+[Bias(\hat{\theta})]^2$$
 $$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
 $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
-Example: find the MSE of the estimators $\bar{X}$ and $S^2$ for the normal distribution in terms of $\mu$ and $\sigma$.
+\textbf{Example}: find the MSE of the estimators $\bar{X}$ and $S^2$ for the normal distribution in terms of $\mu$ and $\sigma$.
 $MSE(\bar{X})=E(\bar{X}-\mu)^2 = Var(\bar{X})+[Bias(\bar{X})]^2$ Bias cancels to zero because $\bar{X}$ is an unbiased estimator so:
 $MSE(\bar{X})=\frac{\sigma^2}{n}$\\
 $MSE(S^2)=E(S^2-\sigma^2)^2=Var(S^2)+[Bias(S^2]^2$ Bias cancels to zero because $S^2$ is an unbiased estimator so:
@@ -218,6 +221,8 @@ $\sum_{k=0}^\infty h(x) *g(x)$ where $g(x)$ is the distribution and $h(x)$ is so
 If you show that the function is zero only when $h(x)$ is zero then it passes the RB theorem. 
 
 If you have complete, sufficient and unbiased and if the distribution passes this theorem then it is a UMVUE. 
+
+\textbf{Example 20.2}: Binomial best unbiased estimator. For $X_1\dots X_i\sim Bernoulli(p)$ Define an estimator of P and show it is based on sufficient and complete statistic. $\bar{X}=\frac{\sum X_i}{n} = \hat{p}$: is an unbiased estimator. Is it a UMVUE? Use Rao-Blackwell: $T=\sum X_i = Y \sim Binomial(n,p)$ $\theta=p$, $\tau(\theta)=p$, $\phi(T)$ is $\frac{T}{n}$, which is unbiased. T is a sufficient statistic for P, recall Example 15.2 T is a complete statistic. Therefore $\phi(T)$ is a UMVUE.
 
 \section*{Hypothesis Testing}
 
