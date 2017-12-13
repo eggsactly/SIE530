@@ -243,22 +243,30 @@ $$P_\theta(X\in R)=\begin{cases}
 Prob\quad Type\quad I \quad Error & \theta \in \Theta_0 \\
 1-  Prob\quad Type\quad II \quad Error & \theta \in \Theta_0^C \\
 \end{cases}$$
-The \emph{Power Function} of a hypothesis test with rejection region $R$ is the function of $\theta$ defined by $\beta(\theta)=P_\theta(X\in R)$.
+The \emph{Power Function} of a hypothesis test with rejection region $R$ is the function of $\theta$ defined by $\beta(\theta)=P_\theta(X\in R)$. The power function is your probability of Type II error.
 
 \subsection*{Inference on MEAN of normal with Variance Known}
-Use Z test
-$$\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \sim N(0,1); \quad \bar{x}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x} + Z_{\alpha/2}\frac{\sigma}{\sqrt{2}}$$
-\begin{tabular}{| c | c | c |}
+Use Z test\\
+Confidence Intervals:
+$$\mu_0:\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \sim N(0,1); \quad \bar{x}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x} + Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$$
+$$\mu_0: \bar{x} + Z_\alpha \frac{\sigma}{n} \geq \mu$$
+$$\mu_0: \bar{x} - Z_\alpha \frac{\sigma}{n} \leq \mu$$
+
+Rejection Regions:
+\begin{tabular}{| c | c | c | c |}
 \hline
-$H_0:\mu=\mu_0$ & $H_1$ & \\ 
-Reject $H_0$: & $\mu \neq \mu_0$ & if $\begin{vmatrix} \frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \end{vmatrix} > Z(\alpha / 2)$  \\ \hline
-Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} < -Z(\alpha)$  \\ \hline
-Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} > Z(\alpha)$  \\ \hline
+$H_0:\mu=\mu_0$ & $H_1$ &  & P Value\\ 
+Reject $H_0$: & $\mu \neq \mu_0$ & if $\begin{vmatrix} \frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \end{vmatrix} > Z(\alpha / 2)$ & $2(1-\Phi(z))$ \\ \hline
+Reject $H_0$: & $\mu < \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} < -Z(\alpha)$  & $\Phi(z)$\\ \hline
+Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} > Z(\alpha)$  & $1-\Phi(z)$\\ \hline
 \end {tabular}
 
 \subsection*{Inference on MEAN of normal with Variance Unknown}
-Use t test
+Use t test\\
+Confidence Intervals:
 $$\frac{\bar{x}-\mu}{s / \sqrt{n}} \sim t_{(n-1)}; \quad \bar{x}-t_{\alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq \bar{x} + t_{\alpha/2}\frac{s}{\sqrt{n}}$$
+$$\mu_0: \bar{x} + t_\alpha \frac{s}{n} \geq \mu$$
+$$\mu_0: \bar{x} - t_\alpha \frac{s}{n} \leq \mu$$
 \begin{tabular}{| c | c | c |}
 \hline
 $H_0:\mu=\mu_0$ & $H_1$ & \\ 
