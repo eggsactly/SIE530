@@ -79,7 +79,7 @@
 \setlength{\columnsep}{2pt}
 
 \begin{center}
-     \Large{\underline{SIE 530 Formula Sheet 2 - Fall 2017f}} \\
+     \Large{\underline{SIE 530 Formula Sheet 2 - Fall 2017}} \\
 \end{center}
 
 \begin{alltt}
@@ -200,8 +200,11 @@ $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
 $$MSE(\hat{\theta})=E{[\hat{\theta}-\theta]^2}=Var(\hat{\theta})+[Bias(\hat{\theta})]^2$$
 $$Bias(\hat{\theta})=E(\hat{\theta})-\theta$$
 $$Var(\hat{\theta})=E{[\hat{\theta}-E(\hat{\theta})]^2}$$
-
-
+Example: find the MSE of the estimators $\bar{X}$ and $S^2$ for the normal distribution in terms of $\mu$ and $\sigma$.
+$MSE(\bar{X})=E(\bar{X}-\mu)^2 = Var(\bar{X})+[Bias(\bar{X})]^2$ Bias cancels to zero because $\bar{X}$ is an unbiased estimator so:
+$MSE(\bar{X})=\frac{\sigma^2}{n}$\\
+$MSE(S^2)=E(S^2-\sigma^2)^2=Var(S^2)+[Bias(S^2]^2$ Bias cancels to zero because $S^2$ is an unbiased estimator so:
+$MSE(S^2)=Var(S^2)=\frac{2\sigma^4}{n-1}$
 \subsection*{Uniform Minimum Variance Unbiased Estimator (UMVUE)}
 An estimator $W*$ is a \emph{best unbiased} estimator of $\tau(\theta)$ if it statisfies $E_\theta W* = \tau(\theta), \forall \theta$ and for any other estimator $W$ with $E_\theta W = \tau(\theta)$ we have $Var_\theta W* \leq Var_\theta W$
 
