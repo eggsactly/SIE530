@@ -230,6 +230,13 @@ A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\
  & $H_1$           &   \makecell{Type II Error \\ "Failure to Detect" \\ $\beta$}   & \makecell{Correct decision \\ "Prob. of Detection" \\ $1-\beta$} \\
 \hline
 \end{tabular}
+
+\begin{itemize}
+\item $\alpha$ = P\{Type I error\} = P\{Reject $H_0$ when $H_0$ is true\} = P\{Reject $H_0|H_0$\}
+\item $\beta$ = P\{Type II error\} = P\{Fail to reject $H_0$ when $H_1$ is true\} = P\{Fail to reject $H_0|H_1$\}
+\item $\pi$ = $1-\beta$ = P\{Reject $H_0$ | $H_1$\} is prob. of detection or power of the test
+\end{itemize}
+
 \subsubsection*{Power Function}
 Suppose $R$ denotes the rejection region for a test. For $\theta \in \Theta_0$ the test will make a mistake if $x \in R$. The probability of a Type I Error is $P_\theta(X\in R)$. The probability of a Type II Error is $P_\theta(X\in R^C)$. $P_\theta(X\in R) = 1-P_\theta(X\in R)$. We have:
 $$P_\theta(X\in R)=\begin{cases}
