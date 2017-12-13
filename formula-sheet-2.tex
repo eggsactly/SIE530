@@ -252,17 +252,22 @@ Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} > t(\alph
 Significance is the area underneath the normal curve up to a certain point on the x axis. When testing for significance you want to find the point on the x axis, ($Z$), which equals the value of the significance from the standard normal CDF. When this $Z$ value is found then it can be compared with a calculated sigma calculation: $\sigma = \sqrt{npq}$ where $n$ is the sample size, $p$ is the claimed probability $q = 1-p$. 
 
 
-Remember\\
-$E(\bar{x})=\mu$\\
-$Var(\bar{x})=\frac{\sigma^2}{n}$\\
-$E(S^2)=\sigma^2$\\
-$Var(S^2)=\frac{2 \sigma^4}{n-1}$\\
-$\sigma^2 = \frac{1}{n} \sum (x_i-\bar{x})^2 = \frac{(n-1)s^2}{n}$\\
+\section*{Misc.}
+\begin{tabular}{| c | c | c |}
+\hline
+ & E & Var \\ \hline
+$\bar{x}$ & $E(\bar{x})=\mu$ & $Var(\bar{x})=\frac{\sigma^2}{n}$ \\ \hline
+$S^2$ & $E(S^2)=\sigma^2$ & $Var(S^2)=\frac{2 \sigma^4}{n-1}$ \\ \hline
+\end{tabular}
+$$\sigma^2 = \frac{1}{n} \sum (x_i-\bar{x})^2 = \frac{(n-1)s^2}{n}$$
 
-Remeber, when sampling with the distribution on the left you get the distribution on the right\\
-Normal $\rightarrow$ Normal\\
-Bernolli $\rightarrow$ Binomial\\
-Exponential $\rightarrow$ Gamma\\
+When sampling with the distribution on the left you get the distribution on the right \\
+\begin{tabular}{| c  c  c |}
+\hline
+Normal & $\rightarrow$ & Normal\\ \hline
+Bernolli & $\rightarrow$ &  Binomial\\ \hline
+Exponential & $\rightarrow$ & Gamma\\ \hline
+\end{tabular}
 
 % Add in the point estimation slide 115 from lecture 15 
 % Normal, Gamma, Binomial, Poisson 
