@@ -8,6 +8,8 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{makecell}
+
 \newcommand\NumCols{3}
 \pdfinfo{
   /Title (formula-sheet-2.pdf)
@@ -223,9 +225,9 @@ A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\
 
              &       &Accept $H_0$ & Reject $H_0$\\
 \hline
-      \multirow{2}{*}{Truth} &$H_0$            & Correct decision     & Type I Error\\
+      \multirow{2}{*}{Truth} &$H_0$            & \makecell{Correct decision \\ "Confidence" \\ $1-\alpha$}     & \makecell{Type I Error \\ "Significance Level" \\ $\alpha$}\\
 \cline{3-4}
- & $H_1$           &   Type II Error   & Correct decision\\
+ & $H_1$           &   \makecell{Type II Error \\ "Failure to Detect" \\ $\beta$}   & \makecell{Correct decision \\ "Prob. of Detection" \\ $1-\beta$} \\
 \hline
 \end{tabular}
 \subsubsection*{Power Function}
