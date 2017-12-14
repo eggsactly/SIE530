@@ -222,7 +222,7 @@ If you show that the function is zero only when $h(x)$ is zero then it passes th
 
 If you have complete, sufficient and unbiased and if the distribution passes this theorem then it is a UMVUE. 
 
-\textbf{Example 20.2}: Binomial best unbiased estimator. For $X_1\dots X_i\sim Bernoulli(p)$ Define an estimator of P and show it is based on sufficient and complete statistic. $\bar{X}=\frac{\sum X_i}{n} = \hat{p}$: is an unbiased estimator. Is it a UMVUE? Use Rao-Blackwell: $T=\sum X_i = Y \sim Binomial(n,p)$ $\theta=p$, $\tau(\theta)=p$, $\phi(T)$ is $\frac{T}{n}$, which is unbiased. T is a sufficient statistic for P, recall Example 15.2 T is a complete statistic. Therefore $\phi(T)$ is a UMVUE.
+\textbf{Example 20.2}: Binomial best unbiased estimator. For $X_1\dots X_i\sim Bernoulli(p)$ Define an estimator of P and show it is based on a sufficient and complete statistic. $\bar{X}=\frac{\sum X_i}{n} = \hat{p}$: is an unbiased estimator. Is it a UMVUE? Use Rao-Blackwell: $T=\sum X_i = Y \sim Binomial(n,p)$ $\theta=p$, $\tau(\theta)=p$, $\phi(T)$ is $\frac{T}{n}$, which is unbiased. T is a sufficient statistic for P, recall Example 15.2 T is a complete statistic. Therefore $\phi(T)$ is a UMVUE.
 
 \section*{Hypothesis Testing}
 
@@ -294,7 +294,7 @@ Reject $H_0$: & $\mu > \mu_0$ & if $\frac{\bar{x}-\mu_0}{s / \sqrt{n}} > t(\alph
 \end {tabular}
 
 \subsection*{Significance Testing}
-Significance is the area underneath the normal curve up to a certain point on the x axis. When testing for significance you want to find the point on the x axis, ($Z$), which equals the value of the significance from the standard normal CDF. When this $Z$ value is found then it can be compared with a calculated sigma calculation: $\sigma = \sqrt{npq}$ where $n$ is the sample size, $p$ is the claimed probability $q = 1-p$. 
+Significance is the area underneath the normal curve up to a certain point on the x axis. When testing for significance you want to find the point on the x axis, ($Z$), which equals the value of the significance from the standard normal CDF. When this $Z$ value is found then it can be compared with a calculated sigma calculation, which is based on the distribution being sampled. 
 
 
 \section*{Misc.}
