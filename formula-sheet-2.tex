@@ -239,6 +239,13 @@ $$\lambda(x)=\frac{sup_{\Theta_0} L(\theta|x)}{sup_{\Theta} L(\theta|x)}$$
 Top part is the ratio between 2 maximum likelihood tests $\Theta=\Theta_0 \cup \Theta_0^C$ Bottom part is the global max. 
 A LRT is any test that has a rejection region of the form $\{x:\lambda(x)\leq c\}$ where c is an number satisfying $0 \leq c \leq 1$.
 
+\textbf{Example Q4 from Exam II:} Let $X_1, \dots X_n$ be iid on $exp(\lambda)$. Formulate an LRT for testing $H_0:\lambda=\lambda_0$ vs. $H_1:\lambda\neq\lambda_0$. 
+First find the likelihood function $L(\lambda|x)=\lambda^{-n}exp\{-\sum_{i=1}^nX_i/\lambda\}$\\
+For Restricted Max: $Sup_{\Theta_0}L(\lambda|x)=\lambda_0^{-n}exp\{-\sum_{i=1}^nX_i/\lambda_0\}$\\
+For Unrestricted Max: $Sup_{\Theta}L(\lambda|x)=\hat{\lambda}^{-n}exp\{-\sum_{i=1}^nX_i/\hat{\lambda}\}$ = $\bar{\lambda}^{-n}exp\{-n\bar{x}/\bar{n}\}$=$\bar{x}^{-n}e^{-n}$\\
+$\lambda(x)=\frac{\lambda_0^{-n}exp\{-\sum_{i=1}^nX_i/\lambda_0\}}{\bar{x}^{-n}e^{-n}}$\\
+Test will reject if: $\frac{\lambda_0}{\bar{x}}^{-n}exp\{-(\bar{x}/\lambda_0-1)\} < c$
+
 \subsection*{Neyman-Pearson Lemma}
 \begin{tabular}{ c  c | c | c }
 \hline
